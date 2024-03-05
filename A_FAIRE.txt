@@ -1,2 +1,5 @@
 TACHES à FAIRE :
 Monde.cpp
+
+Il y a 2 mode : Jeu et Combat.
+C'est la boucle principale qui gère l'alternation entre les 2
