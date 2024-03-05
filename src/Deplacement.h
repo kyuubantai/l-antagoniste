@@ -6,9 +6,13 @@
 class Deplacement {
     private:
         Monde monde;
-        void interaction(); //Gestion de l'interaction avec les cartes
+        int current_x;
+        int current_y;
+        void interaction;
     public:
-        void deplacement(); //Gestion du déplacement du perso sur la carte
+        void deplacement(char event);
+
 };
+
 
 #endif
