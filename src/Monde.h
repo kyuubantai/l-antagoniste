@@ -4,8 +4,15 @@
 #include "Carte.h"
 
 class Monde {
+    private:
+        int current_x;
+        int current_y;
     public:
-        Carte tabCarte[3][4];
+        Carte tabCarte[];
+        int getX();
+        int getY();
+        void setX(const int new_x);
+        void setY(const int new_y);
 };
 
 
