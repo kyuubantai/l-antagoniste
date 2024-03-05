@@ -1,7 +1,7 @@
 #include "Deplacement.h"
 #include "Monde.h"
 
-Deplacment::deplacement(char event)  {
+Deplacment::deplacement(char action)  {
     int new_x=current_x;
     int new_y=current_y;
     switch (event)
