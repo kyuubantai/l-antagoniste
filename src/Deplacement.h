@@ -8,10 +8,9 @@ class Deplacement {
         Monde monde;
         int current_x;
         int current_y;
-        void interaction;
     public:
         void deplacement(char event);
-
+        void interaction(char event);
 };
 
 
