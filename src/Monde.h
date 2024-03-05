@@ -5,8 +5,8 @@
 
 class Monde {
     private:
-        int current_x;
-        int current_y;
+        int x;
+        int y;
     public:
         Carte tabCarte[];
         int getX();
