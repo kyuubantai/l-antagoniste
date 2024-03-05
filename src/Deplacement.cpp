@@ -1,10 +1,10 @@
 #include "Deplacement.h"
 #include "Monde.h"
 
-Deplacment::deplacement(char action)  {
-    int new_x=current_x;
-    int new_y=current_y;
-    switch (event)
+Deplacement::deplacement(char action,Monde monde)  {
+    int new_x=monde.getX();
+    int new_y=monde.getY();
+    switch (action)
     {
         case 'h':
             new_y+=1;
@@ -18,6 +18,7 @@ Deplacment::deplacement(char action)  {
     }
 
     if (tabCase[new_x][new_y].libre) {
-        current_x=new_x;current_y=new_y;
+        monde.setX(new_x);
+        monde.setY(new_y);
     }
 }
