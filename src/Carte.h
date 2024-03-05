@@ -5,7 +5,7 @@
 #include "Case.h"
 
 struct Carte{
-    Case * tabCase;
+    Case tabCase[5][6];
 };
 
 #endif

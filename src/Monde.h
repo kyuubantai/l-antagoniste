@@ -5,7 +5,7 @@
 
 class Monde {
     public:
-        Carte * tabCarte[];
+        Carte tabCarte[3][4];
 };
 
 
