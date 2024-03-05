@@ -11,8 +11,8 @@ class Monde {
         Carte tabCarte[];
         int getX();
         int getY();
-        void setX(const int new_x);
-        void setY(const int new_y);
+        void setX(const int& nvX);
+        void setY(const int& nvY);
 };
 
 
