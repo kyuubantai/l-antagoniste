@@ -3,3 +3,10 @@ Monde.cpp
 
 Il y a 2 mode : Jeu et Combat.
 C'est la boucle principale qui gère l'alternation entre les 2
+Pour l'instant on fait Jeu et on fera Combat ensuite une fois que ça marche
+
+Position du Heros -> Dans Monde et on soustrait à la position fix de la carte
+chaque carte à une position fix genre la 2eme Carte vers la droite à la position x=0;y=200;
+disons que la position du personnage est x=20;y=220;
+pour avoir la position du personnage dans la Carte on fait xCarte=20-0;yCarte=220-200;
+xCarte=20;yCarte=20;
