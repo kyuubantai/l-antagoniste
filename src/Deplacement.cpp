@@ -17,6 +17,6 @@ Deplacment::deplacement(char event)  {
     }
 
     if (tabCase[x][y].libre) {
-        
+        tabCase[x][y].libre = False;
     }
 }
