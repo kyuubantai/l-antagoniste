@@ -9,8 +9,8 @@ class Deplacement {
         int current_x;
         int current_y;
     public:
-        void deplacement(char event);
-        void interaction(char event);
+        void deplacement(char action);
+        void interaction(char action);
 };
 
 
