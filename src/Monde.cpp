@@ -10,9 +10,9 @@ int getY(){
 }
 
 void setX(const int& nvX){
-
+    x=nvX;
 }
 
 void setY(const int& nvY){
-
+    y=nvY;
 }
