@@ -1,5 +1,5 @@
-#ifndef __IMAGE__H
-#define __IMAGE__H
+#ifndef __HEROS__H
+#define __HEROS__H
 
 #include "Personnage.h"
 #include "Objet.h"
