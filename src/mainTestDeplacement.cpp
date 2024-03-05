@@ -8,7 +8,7 @@ int main(){
     char action;
     bool fin=false;
     while(!fin){
-        cin<<action;
+        cin>>action;
         deplacement(action,monde);
     }
 }
