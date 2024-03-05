@@ -6,11 +6,10 @@
 class Deplacement {
     private:
         Monde monde;
-        int current_x;
-        int current_y;
+        void interaction;
     public:
-        void deplacement(char action);
-        void interaction(char action);
+        void deplacement(char action,Monde monde);
+        void interaction(char action,Monde monde);
 };
 
 
