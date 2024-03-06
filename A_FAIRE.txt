@@ -10,3 +10,7 @@ chaque carte à une position fix genre la 2eme Carte vers la droite à la positi
 disons que la position du personnage est x=20;y=220;
 pour avoir la position du personnage dans la Carte on fait xCarte=20-0;yCarte=220-200;
 xCarte=20;yCarte=20;
+
+Chaque Carte est différente. Ca signifie que chaqu'une des Case doit être rentrée manuellement.
+Le constructeur du Monde en a besoin. Il va falloir faire une fichier à part rempli de 
+tabCarte[X][Y].tabCase[x][y].libre/sortie=true/false;
