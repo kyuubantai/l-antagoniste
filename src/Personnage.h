@@ -1,5 +1,5 @@
-#ifndef __IMAGE__H
-#define __IMAGE__H
+#ifndef __PERSONNAGE__H
+#define __PERSONNAGE__H
 
 using namespace std;
 

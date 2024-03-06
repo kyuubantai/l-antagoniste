@@ -5,9 +5,9 @@
 
 class Competence {
     public:
-        atk(attack,arme,vie_enemie);
-        atk_spe(attack,arme,vie_enemie);
-        soin(vie);
+        atk(const int& atk,int& vie_ennemi);
+        atk_spe(const int& atk,int& vie_ennemi);
+        soin(const int& vie);
 
 
 };

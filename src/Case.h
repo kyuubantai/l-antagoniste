@@ -1,8 +1,9 @@
-#ifndef CASE_H
-#define _CASE_H_
+#ifndef __CASE__H
+#define __CASE__H
 
 struct Case {
     bool libre;
+    bool sortie;
 };
 
 #endif
