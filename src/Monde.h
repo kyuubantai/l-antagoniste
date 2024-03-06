@@ -7,8 +7,9 @@ class Monde {
     private:
         int x;
         int y;
+        Carte tabCarte[3][4];
     public:
-        Carte tabCarte[];
+        Monde(); // Initialise toutes les cartes
         int getX();
         int getY();
         void setX(const int& nvX);

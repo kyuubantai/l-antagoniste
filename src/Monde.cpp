@@ -1,18 +1,21 @@
 #include "Monde.h"
 
+Monde::Monde(){
 
-int getX(){
+}
+
+int Monde::getX(){
     return x;
 }
 
-int getY(){
+int Monde::getY(){
     return y;
 }
 
-void setX(const int& nvX){
+void Monde::setX(const int& nvX){
     x=nvX;
 }
 
-void setY(const int& nvY){
+void Monde::setY(const int& nvY){
     y=nvY;
 }
