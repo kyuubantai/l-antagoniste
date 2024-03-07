@@ -21,6 +21,8 @@ class Personnage {
 		void setAtk(const int& nvAtk);
 
 		int getNrj();
+
+		int getComp()
 };
 
 #endif
