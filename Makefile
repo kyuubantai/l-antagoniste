@@ -1,31 +1,27 @@
-EXEC_NAME = test
-OBJ_FILES = main.o maClasse.o
+OBJ_FILES = mainTestDeplacement.o Monde.o Deplacement.o
 CFLAGS = -Wall -ggdb
 LIBS = -lSDL2
 
+all: mainTest
 
-all: $(EXEC_NAME)
+mainTest: $(OBJ_FILES)
+	g++ obj/mainTestDeplacement.o obj/Monde.o obj/Deplacement.o -o bin/mainTest
 
-
-$(EXEC_NAME): $(OBJ_FILES)
-g++ $(OBJ_FILES) -o $(EXEC_NAME) $(LIBS)
-
-
-main.o: main.cpp maClasse.h
-g++ $(CFLAGS) -c main.cpp
+mainTestDeplacement.o: src/mainTestDeplacement.cpp Monde.o Deplacement.o
+	g++ $(CFLAGS) -c src/mainTestDeplacement.cpp -o obj/mainTestDeplacement.o
 
 Carte.o: src/Carte.cpp src/Case.h
-g++ $(CFLAGS) -c obj/Carte.o
+	g++ $(CFLAGS) -c src/Carte.cpp -o obj/Carte.o
 
 Monde.o: src/Monde.cpp src/Carte.h
-g++ $(CFLAGS) -c obj/Monde.o
+	g++ $(CFLAGS) -c src/Monde.cpp -o obj/Monde.o
 
 Deplacement.o: src/Deplacement.cpp src/Monde.h
-g++ $(CFLAGS) -c obj/Deplacement.o
+	g++ $(CFLAGS) -c src/Deplacement.cpp -o obj/Deplacement.o
 
 Personnage.o: src/Personnage.cpp
-g++ $(CFLAGS) -c obj/Personnage.o
+	g++ $(CFLAGS) -c src/Personnage.cpp -o obj/Personnage.o
 
 
 clean:
-rm $(OBJ_FILES)
+	rm $(OBJ_FILES)
