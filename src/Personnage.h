@@ -1,6 +1,7 @@
 #ifndef __PERSONNAGE__H
 #define __PERSONNAGE__H
 
+#include "Competence.h"
 using namespace std;
 
 class Personnage {
@@ -9,6 +10,7 @@ class Personnage {
 		int vieMax;
 		int atkBase;
 		int energie;
+		Competence comp[3];
 	public:
 		int getVie();
 
