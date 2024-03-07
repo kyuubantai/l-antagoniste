@@ -1,5 +1,7 @@
 TACHES à FAIRE :
 Monde.cpp
+Combat.cpp
+Personnage.cpp
 
 Il y a 2 mode : Jeu et Combat.
 C'est la boucle principale qui gère l'alternation entre les 2
@@ -20,3 +22,6 @@ Le Monde fait 4*4 Carte de 7*12 Case, ce qui fait 1344 cas individuels à traite
 On va soit changer la taille d'une Carte (je préfère éviter) ou bien changer la struct Case pour que lorsqu'on
 déclare les booléens libre et sortie, ceux-ci soient false par défaut, ce qui réduit grandement
 les changements nécessaires puisque on aura juste à basculer en true les Case qui nous intéressent.
+
+COMBAT : Finir d'abord Personnage.cpp afin de récupérer les compétences pour les utiliser dans Combat.cpp
+Commencer Jeu.cpp
