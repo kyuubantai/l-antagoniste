@@ -5,8 +5,8 @@
 
 class Monde {
     private:
-        int x;
-        int y;
+        int mX;
+        int mY;
         Carte tabCarte[3][4];
     public:
         Monde(); // Initialise toutes les cartes
