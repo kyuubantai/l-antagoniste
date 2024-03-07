@@ -7,11 +7,11 @@ class Monde {
     private:
         int mX;
         int mY;
-        Carte tabCarte[3][4];
         int mCarteX;
         int mCarteY;
     public:
         Monde(); // Initialise toutes les cartes
+        Carte tabCarte[3][4];
         int getX();
         int getY();
         void setX(const int& nvX);
