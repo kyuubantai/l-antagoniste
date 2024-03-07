@@ -15,7 +15,7 @@ class Combat{
     public:
         Combat();
         ~Combat();
-        int combat();
+        bool combat();
 };
 
 #endif
