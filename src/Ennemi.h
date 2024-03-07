@@ -5,9 +5,8 @@
 using namespace std;
 
 class Ennemi {
-	private:
-		Personnage mob;	
 	public:
+		Personnage mob;	
 		Ennemi();
 		~Ennemi();
 		Personnage boss();
