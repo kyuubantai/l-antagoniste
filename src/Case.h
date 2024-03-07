@@ -2,8 +2,8 @@
 #define __CASE__H
 
 struct Case {
-    bool libre;
-    bool sortie;
+    bool libre=false;
+    bool sortie=false;
 };
 
 #endif
