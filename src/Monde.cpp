@@ -4,18 +4,27 @@ Monde::Monde(){
 
 }
 
+
 int Monde::getX(){
-    return x;
+    return mX;
 }
 
 int Monde::getY(){
-    return y;
+    return mY;
 }
 
 void Monde::setX(const int& nvX){
-    x=nvX;
+    mX=nvX;
 }
 
 void Monde::setY(const int& nvY){
-    y=nvY;
+    mY=nvY;
+}
+
+int Monde::getCarteX() const{
+    return mCarteX;
+}
+
+int Monde::getCarteY() const {
+    return mCarteY;
 }
