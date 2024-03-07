@@ -1,4 +1,4 @@
-EXEC_NAME = nom_de_l_executable
+EXEC_NAME = test
 OBJ_FILES = main.o maClasse.o
 CFLAGS = -Wall -ggdb
 INCLUDES = -I./extern/include
@@ -15,9 +15,20 @@ g++ $(OBJ_FILES) -o $(EXEC_NAME) $(LIBS)
 main.o: main.cpp maClasse.h
 g++ $(CFLAGS) $(INCLUDES) -c main.cpp
 
+Carte.o: src/Carte.cpp src/Case.h
+g++ $(CFLAGS) $(INCLUDES) -c obj/Carte.o
 
-maClasse.o: maClasse.cpp maClasse.h
-g++ $(CFLAGS) $(INCLUDES) -c maClasse.cpp
+Case.o: src/Case.cpp
+g++ $(CFLAGS) $(INCLUDES) -c obj/Case.o
+
+Monde.o: src/Monde.cpp src/Carte.h
+g++ $(CFLAGS) $(INCLUDES) -c obj/Monde.o
+
+Deplacement.o: src/Deplacement.cpp src/Monde.h
+g++ $(CFLAGS) $(INCLUDES) -c obj/Deplacement.o
+
+Personnage.o: src/Personnage.cpp
+g++ $(CFLAGS) $(INCLUDES) -c obj/Personnage.o
 
 
 clean:
