@@ -1,22 +1,19 @@
-#ifndef __COMBAT__H
-#define __COMBAT__H
+#include "Combat.h"
+#include <iostream>
 
+using namespace std;
 
-#include "Heros.h"
-#include "Ennemi.h"
+Combat::Combat(){
+    nbtour = 1;
+}
 
-enum TOUR{Hero, Ennemies};
+Combat::~Combat(){};
 
-class Combat{
-    private:
-        Heros hero;
-        Ennemi ennemies[3]; // 3 ennemis max dans un combat
-        int nbtour; // le nombre de tour, commencera à 1
-        TOUR turn; // va déterminer le tour du héros ou des ennemis: true pour les héros, false pour les ennemis
-    public:
-        Combat();
-        ~Combat();
-        bool combat();
-};
+bool Combat::combat(){
+    bool fin = false;
+    while(!fin){
+        (turn == Hero) ? cout<< "VOTRE TOUR"<< endl : cout << "TOUR ENNEMI"<<endl;
+        if(hero.heros.comp)
 
-#endif
+    }
+}
