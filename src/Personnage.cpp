@@ -18,3 +18,7 @@ int Personnage::getAtk(){
 void Personnage::setAtk(const int& nvAtk){
     atkBase=nvAtk;
 }
+
+int Personnage::getNrj(){
+    return energie;
+}

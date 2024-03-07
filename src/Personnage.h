@@ -8,7 +8,7 @@ class Personnage {
 		int vie;
 		int vieMax;
 		int atkBase;
-		int energy;
+		int energie;
 	public:
 		int getVie();
 
