@@ -4,8 +4,15 @@
 #include "Personnage.h"
 using namespace std;
 
-struct Ennemi {
-	Personnage stats;
+class Ennemi {
+	private:
+		Personnage mob;	
+	public:
+		Ennemi();
+		~Ennemi();
+		Personnage boss();
+		Personnage tank();
+		Personnage light();
 };
 
 #endif
