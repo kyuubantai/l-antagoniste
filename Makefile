@@ -18,9 +18,6 @@ g++ $(CFLAGS) $(INCLUDES) -c main.cpp
 Carte.o: src/Carte.cpp src/Case.h
 g++ $(CFLAGS) $(INCLUDES) -c obj/Carte.o
 
-Case.o: src/Case.cpp
-g++ $(CFLAGS) $(INCLUDES) -c obj/Case.o
-
 Monde.o: src/Monde.cpp src/Carte.h
 g++ $(CFLAGS) $(INCLUDES) -c obj/Monde.o
 
