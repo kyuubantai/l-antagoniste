@@ -2,12 +2,10 @@
 #define __COMPETENCE__H
 
 
-
 class Competence {
     public:
-        atk(const int& atk,int& vie_ennemi);
-        atk_spe(const int& atk,int& vie_ennemi);
-        soin(const int& vie);
+        int atk(const int& atk,int& vie_ennemi); //paramètre ttes les attaques
+        int soin(const int& vie,int& vie_perso);
 
 
 };
