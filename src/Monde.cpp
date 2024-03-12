@@ -21,10 +21,6 @@ void Monde::setY(const int& nvY){
     mY=nvY;
 }
 
-int Monde::getCarteX() const{
-    return mCarteX;
-}
-
-int Monde::getCarteY() const {
-    return mCarteY;
+int Monde::getCarte() const{
+    return mCarte;
 }
