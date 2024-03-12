@@ -4,11 +4,9 @@
 #include"Monde.h"
 
 class Deplacement {
-    private:
-        Monde monde;
     public:
-        void deplacement(char action,Monde monde);
-        void interaction(char action,Monde monde);
+        void deplacement(char action,Monde &monde);
+        void interaction(char action,Monde &monde);
 };
 
 
