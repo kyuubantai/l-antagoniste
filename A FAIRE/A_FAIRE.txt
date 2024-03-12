@@ -14,7 +14,7 @@ Pour Mardi :
 
 - Utiliser wintxt (voir pacman) pour le déplacement avec les touches
 - créer module affichage texte (séparé du contrôleur)
-- voir si on peut rendre le code du constructeur du monde plus compacte
+- voir si on peut rendre le code du constructeur du monde plus compacte https://www.mapeditor.org/
 
 
 
