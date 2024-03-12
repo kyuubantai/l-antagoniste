@@ -12,7 +12,7 @@ for(i=1;i<6;i++)
 {
     for(j=1;j<11;j++)
     {
-        tabCarte[0].tabCase[i][j].libre=true
+        tabCarte[0].tabCase[i][j].libre=true;
     }
 }
 
@@ -334,7 +334,7 @@ for(i=1;i<6;i++)
 {
     for(j=1;j<11;j++)
     {
-        tabCarte[7].tabCase[i][j].libre=true
+        tabCarte[7].tabCase[i][j].libre=true;
     }
 }
 
