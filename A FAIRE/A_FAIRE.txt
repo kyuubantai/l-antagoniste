@@ -1,5 +1,4 @@
 TACHES à FAIRE :
-Monde.cpp
 Combat.cpp
 Personnage.cpp
 
