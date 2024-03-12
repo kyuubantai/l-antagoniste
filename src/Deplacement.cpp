@@ -1,29 +1,34 @@
 #include "Deplacement.h"
 #include "Monde.h"
+#include <iostream>
 
-
-void Deplacement::deplacement(char action,Monde monde) {
+void Deplacement::deplacement(char action,Monde &monde) {
     int new_x=monde.getX();
     int new_y=monde.getY();
     switch (action)
     {
         case 'h':
-            new_y+=1;
+            new_x=new_x-1;
+            break;
         case 'b':
-            new_y-=1;
-        case 'g':
-            new_x-=1;
-        case 'd':
             new_x+=1;
+            break;
+        case 'g':
+            new_y=new_y-1;
+            break;
+        case 'd':
+            new_y+=1;
+            break;
         
     }
 
-    int carte=monde.getCarte();
+    int carteX=monde.getCarte();
 
-    if (monde.tabCarte[carte].tabCase[new_x][new_y].libre) {
+    if (monde.tabCarte[carteX].tabCase[new_x][new_y].libre) {
+        std::cout<<new_x<<new_y;
         monde.setX(new_x);
         monde.setY(new_y);
     }
 }
-void Deplacement::interaction(char action, Monde monde) {
+void Deplacement::interaction(char action, Monde &monde) {
 }
