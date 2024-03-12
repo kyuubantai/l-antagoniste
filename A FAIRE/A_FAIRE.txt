@@ -7,15 +7,8 @@ Il y a 2 mode : Jeu et Combat.
 C'est la boucle principale qui gère l'alternation entre les 2
 Pour l'instant on fait Jeu et on fera Combat ensuite une fois que ça marche
 
-La génération du Monde va avoir la priorité sur le déplacement.
-Position de Héros dans Monde -> change à chaque carte
 
-Le constructeur du Monde en a besoin. Il va falloir faire une fichier à part rempli de 
-tabCarte[X][Y].tabCase[x][y].libre/sortie=true/false;
-Le Monde fait 4*4 Carte de 7*12 Case, ce qui fait 1344 cas individuels à traiter...
-On va soit changer la taille d'une Carte (je préfère éviter) ou bien changer la struct Case pour que lorsqu'on
-déclare les booléens libre et sortie, ceux-ci soient false par défaut, ce qui réduit grandement
-les changements nécessaires puisque on aura juste à basculer en true les Case qui nous intéressent.
+
 
 COMBAT : Finir d'abord Personnage.cpp afin de récupérer les compétences pour les utiliser dans Combat.cpp
 Commencer Jeu.cpp
