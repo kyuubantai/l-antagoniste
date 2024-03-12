@@ -18,10 +18,9 @@ void Deplacement::deplacement(char action,Monde monde) {
         
     }
 
-    int carteX=monde.getCarteX();
-    int carteY=monde.getCarteY();
+    int carte=monde.getCarte();
 
-    if (monde.tabCarte[carteX][carteY].tabCase[new_x][new_y].libre) {
+    if (monde.tabCarte[carte].tabCase[new_x][new_y].libre) {
         monde.setX(new_x);
         monde.setY(new_y);
     }
