@@ -16,6 +16,7 @@ class Monde {
         void setX(const int& nvX);
         void setY(const int& nvY);
         int getCarte() const;
+        void setCarte(const int& nvCarte);
 };
 
 
