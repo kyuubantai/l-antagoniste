@@ -3,7 +3,9 @@
 Monde::Monde(){
     tabCarte[0].tabCase[2][11].sortie=true;
 
-
+    mX=2;
+    mY=5;
+    mCarte=9;
 //___________________________________________________
 
 
