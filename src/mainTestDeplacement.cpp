@@ -11,5 +11,19 @@ int main(){
     while(!fin){
         cin>>action;
         depla.deplacement(action,monde);
+        depla.interaction(action,monde);
+        int mX=monde.getX();
+        int mY=monde.getY();
+        for (int i=0;i<7 ;i++) {
+            for (int j=0;j<12;j++) {
+                int carteX=monde.getCarte();
+                if ((i=mX) && (j=mY)) 
+                    cout<<"!";
+                else if (monde.tabCarte[carteX].tabCase[i][j].libre) 
+                    cout<<"*";
+                else
+                    cout<<"-";
+            }
+        }
     }
 }
