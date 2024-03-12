@@ -17,6 +17,8 @@ class Jeu {
         SDL_Surface * m_surface;
         SDL_Texture * m_texture;
         bool m_hasChanged;
+        Deplacement d;
+        Monde m;
     public:
         Jeu();
         ~Jeu();
