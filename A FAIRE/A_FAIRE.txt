@@ -9,5 +9,15 @@ Pour l'instant on fait Jeu et on fera Combat ensuite une fois que ça marche
 
 
 
+
+Pour Mardi :
+
+- Utiliser wintxt (voir pacman) pour le déplacement avec les touches
+- créer module affichage texte (séparé du contrôleur)
+- voir si on peut rendre le code du constructeur du monde plus compacte
+
+
+
+
 COMBAT : Finir d'abord Personnage.cpp afin de récupérer les compétences pour les utiliser dans Combat.cpp
 Commencer Jeu.cpp
