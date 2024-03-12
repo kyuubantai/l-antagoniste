@@ -399,6 +399,7 @@ tabCarte[9].tabCase[1][4].libre=true;
 tabCarte[9].tabCase[1][5].libre=true;
 tabCarte[9].tabCase[1][6].libre=true;
 tabCarte[9].tabCase[1][7].libre=true;
+tabCarte[9].tabCase[1][9].libre=true;
 
 tabCarte[9].tabCase[2][4].libre=true;
 tabCarte[9].tabCase[2][5].libre=true;
@@ -549,4 +550,8 @@ void Monde::setY(const int& nvY){
 
 int Monde::getCarte() const{
     return mCarte;
+}
+
+void Monde::setCarte(const int& nvCarte){
+    mCarte=nvCarte;
 }
