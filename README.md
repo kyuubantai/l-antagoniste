@@ -5,7 +5,7 @@
 
 MANUEL :
 
-DESCRIPTION : 
+DESCRIPTION : C'est un jeu de type RPG avec des combats en tour par tour. Vous incarnez un personnage qui se surnomme "L'Antagoniste".
 
 
 ## L'Antagoniste
