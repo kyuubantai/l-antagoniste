@@ -6,7 +6,7 @@
 #include "Deplacement.h"
 #include <SDL2/SDL.h>
 
-class Interface {
+class Jeu {
     private:    
 
     //lien sur SDL_Window
