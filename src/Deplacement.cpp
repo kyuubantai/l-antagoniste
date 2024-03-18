@@ -2,7 +2,7 @@
 #include "Monde.h"
 #include <iostream>
 
-void Deplacement::deplacement(char action,Monde &monde) {
+void Deplacement::deplace(char action) {
     int new_x=monde.getX();
     int new_y=monde.getY();
     switch (action)
@@ -24,12 +24,10 @@ void Deplacement::deplacement(char action,Monde &monde) {
     int carteX=monde.getCarte();
 
     if (monde.tabCarte[carteX].tabCase[new_x][new_y].libre) {
-        std::cout<<new_x<<new_y<<std::endl;
         monde.setX(new_x);
         monde.setY(new_y);
     }
     if (monde.tabCarte[carteX].tabCase[new_x][new_y].sortie) {
-        std::cout<<"Sortie"<<std::endl;
         switch (action)
         {
             case 'h':
@@ -54,6 +52,4 @@ void Deplacement::deplacement(char action,Monde &monde) {
                 break;
         }
     }
-}
-void Deplacement::interaction(char action, Monde &monde) {
 }
