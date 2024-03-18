@@ -3,6 +3,6 @@
 
 #include "Deplacement.h"
 
-void deplace(Deplacement& depla);
+void txtBoucle(Deplacement & depla);
 
 #endif
