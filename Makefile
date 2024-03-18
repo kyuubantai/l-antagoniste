@@ -1,11 +1,11 @@
-OBJ_FILES = mainTestDeplacement.o Monde.o Deplacement.o
+OBJ_FILES =Monde.o Deplacement.o mainTxt.o WinTxt.o
 CFLAGS = -Wall -ggdb
 LIBS = -lSDL2
 
 all: mainTest
 
 mainTest: $(OBJ_FILES)
-	g++ obj/mainTestDeplacement.o obj/Monde.o obj/Deplacement.o -o bin/mainTest
+	g++ obj/mainTestDeplacement.o obj/Monde.o obj/Deplacement.o obj/mainTxt.o obj/WinTxt.o -o bin/mainTest
 
 Carte.o: src/Carte.cpp src/Case.h
 	g++ $(CFLAGS) -c src/Carte.cpp -o obj/Carte.o
@@ -25,7 +25,7 @@ JeuTxt.o: src/JeuTxt.cpp src/Deplacement.h src/winTxt.h
 winTxt.o: src/winTxt.cpp 
 	g++ $(CFLAGS) -c src/winTxt.cpp -o obj/winTxt.o
 
-mainTxt.o: src/mainTxt.cpp src/JeuTxt.cpp src/winTxt.cpp
+mainTxt.o: src/mainTxt.cpp obj/JeuTxt.o obj/winTxt.o
 	g++ $(CFLAGS) -c src/mainTxt.cpp -o obj/mainTxt.o
 
 
