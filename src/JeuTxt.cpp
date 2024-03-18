@@ -7,12 +7,13 @@
 #include "winTxt.h"
 
 #include "Deplacement.h"
+#include "JeuTxt.h"
 
 void txtAff(WinTXT & win, const Deplacement & depla) {
 	int x,y;
 	win.clear();
-	for (int x=0;x<7;x++) {
-        for (int y=0;y<12;y++) {
+	for (x=0;x<7;x++) {
+        for (y=0;y<12;y++) {
             if ((x==depla.getMonde().getX()) && (y==depla.getMonde().getY())) 
                 win.print(x,y,'!');
             else if (depla.getMonde().tabCarte[depla.getMonde().getCarte()].tabCase[x][y].libre) 
@@ -20,13 +21,12 @@ void txtAff(WinTXT & win, const Deplacement & depla) {
             else
                 win.print(x,y,'-');
         }
-        win.print(x,y,'\0');
 	}
 
 	win.draw();
 }
 
-void txtBoucle (Deplacement & depla) {
+void txtBoucle(Deplacement & depla) {
 	// Creation d'une nouvelle fenetre en mode texte
 	// => fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
     WinTXT win (depla.getMonde().getX(),depla.getMonde().getY());
