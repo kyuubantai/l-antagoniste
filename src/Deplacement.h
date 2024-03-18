@@ -4,10 +4,13 @@
 #include"Monde.h"
 
 class Deplacement {
+    private:
+        Monde monde;
     public:
-        void deplacement(char action,Monde &monde);
-        void interaction(char action,Monde &monde);
+        void deplace(char action);
+        Monde getMonde() const;
 };
 
+inline Monde Deplacement::getMonde () const { return monde; }
 
 #endif
