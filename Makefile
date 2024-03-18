@@ -22,6 +22,13 @@ Deplacement.o: src/Deplacement.cpp src/Monde.h
 Personnage.o: src/Personnage.cpp
 	g++ $(CFLAGS) -c src/Personnage.cpp -o obj/Personnage.o
 
+JeuTxt.o: src/JeuTxt.cpp src/Deplacement.h src/winTxt.h
+	g++ $(CFLAGS) -c src/JeuTxt.cpp -o obj/JeuTxt.o
+
+
+winTxt.o: src/winTxt.cpp 
+	g++ $(CFLAGS) -c src/winTxt.cpp -o obj/winTxt.o
+
 
 clean:
 	rm $(OBJ_FILES)
