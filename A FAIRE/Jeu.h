@@ -2,7 +2,7 @@
 #define __JEU__H
 
 #include "Monde.h"
-#include "Combat.h"
+//#include "Combat.h"
 #include "Deplacement.h"
 #include <SDL2/SDL.h>
 
@@ -22,7 +22,7 @@ class Jeu {
     public:
         Jeu();
         ~Jeu();
-        void afficher_monde(const Monde &m);
+        void afficher_monde();
         void boucle_combat();
 
 };
