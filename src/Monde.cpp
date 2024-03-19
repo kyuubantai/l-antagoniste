@@ -74,6 +74,9 @@ tabCarte[1].tabCase[2][0].sortie=true;
 tabCarte[1].tabCase[3][11].sortie=true;
 tabCarte[1].tabCase[6][3].sortie=true;
 
+tabCarte[1].tabCase[4][3].libre=true; //case ennemi
+tabCarte[1].tabCase[3][10].libre=true; //case ennemi
+
 
 //___________________________________________________
 
@@ -116,6 +119,9 @@ tabCarte[2].tabCase[5][9].libre=true;
 
 tabCarte[2].tabCase[2][11].sortie=true;
 tabCarte[2].tabCase[3][0].sortie=true;
+
+tabCarte[2].tabCase[3][6].libre=true; //case ennemi
+tabCarte[2].tabCase[3][9].libre=true; //case ennemi
 
 
 //___________________________________________________
@@ -176,6 +182,8 @@ tabCarte[3].tabCase[6][2].libre=true;
 tabCarte[3].tabCase[2][0].sortie=true;
 tabCarte[3].tabCase[6][2].sortie=true;
 
+tabCarte[3].tabCase[3][10].libre=true; //case ennemi
+
 
 //___________________________________________________
 
@@ -225,6 +233,8 @@ tabCarte[4].tabCase[6][6].libre=true;
 
 tabCarte[4].tabCase[4][11].sortie=true;
 tabCarte[4].tabCase[6][6].sortie=true;
+
+tabCarte[4].tabCase[5][6].libre=true; //case ennemi
 
 
 //___________________________________________________
@@ -279,6 +289,8 @@ tabCarte[5].tabCase[6][9].libre=true;
 tabCarte[5].tabCase[0][3].sortie=true;
 tabCarte[5].tabCase[4][0].sortie=true;
 tabCarte[5].tabCase[6][9].sortie=true;
+
+tabCarte[5].tabCase[1][3].libre=true; //case ennemi
 
 
 //___________________________________________________
@@ -409,6 +421,7 @@ tabCarte[9].tabCase[2][8].libre=true;
 tabCarte[9].tabCase[2][9].libre=true;
 tabCarte[9].tabCase[2][10].libre=true;
 
+tabCarte[9].tabCase[3][0].libre=true;
 tabCarte[9].tabCase[3][1].libre=true;
 tabCarte[9].tabCase[3][4].libre=true;
 tabCarte[9].tabCase[3][5].libre=true;
@@ -433,6 +446,8 @@ tabCarte[9].tabCase[5][9].libre=true;
 tabCarte[9].tabCase[5][10].libre=true;
 
 tabCarte[9].tabCase[0][9].sortie=true;
+tabCarte[9].tabCase[3][0].sortie=true;
+
 
 //___________________________________________________
 
@@ -528,6 +543,9 @@ tabCarte[11].tabCase[5][7].libre=true;
 
 tabCarte[11].tabCase[0][9].sortie=true;
 tabCarte[11].tabCase[3][0].sortie=true;
+
+tabCarte[11].tabCase[5][6].libre=true; //case ennemi
+
 
 }
 
