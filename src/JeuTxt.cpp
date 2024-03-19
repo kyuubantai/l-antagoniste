@@ -15,11 +15,11 @@ void txtAff(WinTXT & win, const Deplacement & depla) {
 	for (x=0;x<7;x++) {
         for (y=0;y<12;y++) {
             if ((x==depla.getMonde().getX()) && (y==depla.getMonde().getY())) 
-                win.print(x,y,'!');
+                win.print(y,x,'!');
             else if (depla.getMonde().tabCarte[depla.getMonde().getCarte()].tabCase[x][y].libre) 
-                win.print(x,y,'*');
+                win.print(y,x,'-');
             else
-                win.print(x,y,'-');
+                win.print(y,x,'*');
         }
 	}
 
@@ -29,7 +29,7 @@ void txtAff(WinTXT & win, const Deplacement & depla) {
 void txtBoucle(Deplacement & depla) {
 	// Creation d'une nouvelle fenetre en mode texte
 	// => fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
-    WinTXT win (depla.getMonde().getX(),depla.getMonde().getY());
+    WinTXT win (12,7);
 
 	bool ok = true;
 	int c;
