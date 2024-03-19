@@ -3,7 +3,7 @@
 
 using namespace std;
 
-char image = "data/carte.bmp";
+//char image = "data/carte.bmp";
 Jeu::Jeu(): m_window(nullptr),m_surface(nullptr), m_texture(nullptr) {
     
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
