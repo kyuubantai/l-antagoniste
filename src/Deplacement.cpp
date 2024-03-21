@@ -36,7 +36,7 @@ void Deplacement::deplace(char action) {
                 monde.setCarte(carteX-4);
                 break;
             case 'b':
-                new_x=1;
+                new_x=0
                 monde.setX(new_x);
                 monde.setCarte(carteX+4);
                 break;
@@ -46,7 +46,7 @@ void Deplacement::deplace(char action) {
                 monde.setCarte(carteX-1);
                 break;
             case 'd':
-                new_y=1;
+                new_y=0;
                 monde.setY(new_y);
                 monde.setCarte(carteX+1);
                 break;
