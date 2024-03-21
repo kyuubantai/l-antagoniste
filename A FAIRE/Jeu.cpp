@@ -10,18 +10,17 @@ Jeu::Jeu(): m_window(nullptr),m_surface(nullptr), m_texture(nullptr) {
         cout << "Erreur lors de l'initialisation de la SDL : " << SDL_GetError() << endl;SDL_Quit();exit(1);
     }
 
-    m_window = SDL_CreateWindow("L'Antagoniste", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 1600, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+    int dimX,dimY;
+    dimX = d.getMonde().getX();
+    dimY = d.getMonde().getY();
+
+    m_window = SDL_CreateWindow("L'Antagoniste", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 192*dimX, 112*dimY, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     if (m_window == NULL) { 
         cout << "Erreur lors de la création de la fenetre : " << SDL_GetError() << endl; SDL_Quit(); exit(1);
     }
     m_renderer = SDL_CreateRenderer(m_window, -1,SDL_RENDERER_ACCELERATED);
 
-    m_surface = IMG_Load("data/Map10.png");
-    if(!m_surface) {  
-     cout << "Erreur lors du chargement de l'image" <<endl<<SDL_GetError()<<endl;
-    }
-    m_texture = SDL_CreateTextureFromSurface(m_renderer,m_surface);
-    SDL_FreeSurface(m_surface);
+    map.loadFile("data/Map10.png",m_renderer);
 }
 
 Jeu::~Jeu(){
@@ -34,12 +33,9 @@ Jeu::~Jeu(){
 }
 
 void Jeu::afficher_monde() {
-    int dimX,dimY;
-    dimX = d.getMonde().getX();
-    dimY = d.getMonde().getY();
     SDL_Rect pos;
-    pos.x = 200 * dimX;
-    pos.y = 200 * dimY;
+    pos.x = 0;
+    pos.y = 0;
     pos.w = 200;
     pos.h = 200;
     SDL_RenderCopy(m_renderer,m_texture,nullptr,&pos);
