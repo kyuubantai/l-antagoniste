@@ -361,7 +361,6 @@ tabCarte[7].tabCase[6][9].sortie=true;
 
 tabCarte[8].tabCase[0][6].libre=true;
 
-tabCarte[8].tabCase[1][4].libre=true;
 tabCarte[8].tabCase[1][5].libre=true;
 tabCarte[8].tabCase[1][6].libre=true;
 tabCarte[8].tabCase[1][7].libre=true;
@@ -374,7 +373,6 @@ tabCarte[8].tabCase[2][6].libre=true;
 tabCarte[8].tabCase[2][7].libre=true;
 tabCarte[8].tabCase[2][8].libre=true;
 
-tabCarte[8].tabCase[3][2].libre=true;
 tabCarte[8].tabCase[3][3].libre=true;
 tabCarte[8].tabCase[3][4].libre=true;
 tabCarte[8].tabCase[3][5].libre=true;
