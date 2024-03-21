@@ -44,7 +44,6 @@ tabCarte[1].tabCase[2][9].libre=true;
 tabCarte[1].tabCase[2][10].libre=true;
 
 tabCarte[1].tabCase[3][2].libre=true;
-tabCarte[1].tabCase[3][3].libre=true;
 tabCarte[1].tabCase[3][8].libre=true;
 tabCarte[1].tabCase[3][9].libre=true;
 tabCarte[1].tabCase[3][11].libre=true;
