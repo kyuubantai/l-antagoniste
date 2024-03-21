@@ -227,7 +227,6 @@ tabCarte[4].tabCase[4][10].libre=true;
 tabCarte[4].tabCase[4][11].libre=true;
 
 tabCarte[4].tabCase[5][9].libre=true;
-tabCarte[4].tabCase[5][10].libre=true;
 
 tabCarte[4].tabCase[6][6].libre=true;
 
