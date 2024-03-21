@@ -5,6 +5,6 @@ using namespace std;
 
 int main(){
     Jeu j;
-    j.afficher_monde();
+    j.boucle_jeu();
     return 0;
 }
