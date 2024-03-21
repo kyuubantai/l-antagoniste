@@ -4,44 +4,35 @@ using namespace std;
 
 
 
+
 Jeu::Jeu(): m_window(nullptr),m_surface(nullptr), m_texture(nullptr) {
-    
+    //Création fenêtre
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         cout << "Erreur lors de l'initialisation de la SDL : " << SDL_GetError() << endl;SDL_Quit();exit(1);
     }
 
-    int dimX,dimY;
-    dimX = d.getMonde().getX();
-    dimY = d.getMonde().getY();
-
-    m_window = SDL_CreateWindow("L'Antagoniste", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 192*dimX, 112*dimY, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+    m_window = SDL_CreateWindow("L'Antagoniste", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 192*5, 112*5, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     if (m_window == NULL) { 
         cout << "Erreur lors de la création de la fenetre : " << SDL_GetError() << endl; SDL_Quit(); exit(1);
     }
     m_renderer = SDL_CreateRenderer(m_window, -1,SDL_RENDERER_ACCELERATED);
-
-    map.loadFile("data/Map10.png",m_renderer);
+    //Loads d'image
+    for(int i = 0;i<3;i++){
+    map[i].loadMap(m_renderer,i+1);
+    }
 }
 
 Jeu::~Jeu(){
-        if (m_texture != nullptr) {
-        SDL_DestroyTexture(m_texture);
-    }
-    if (m_surface != nullptr) {
-        SDL_FreeSurface(m_surface);
-    }
+    SDL_DestroyWindow(m_window);
+    SDL_DestroyRenderer(m_renderer);
+    SDL_Quit();
 }
-
-void Jeu::afficher_monde() {
-    SDL_Rect pos;
-    pos.x = 0;
-    pos.y = 0;
-    pos.w = 200;
-    pos.h = 200;
-    SDL_RenderCopy(m_renderer,m_texture,nullptr,&pos);
-
+void Jeu::afficher_monde(){
+    int x,y;
+    map[0].draw(m_renderer,0,0,192*5,112*5);
     SDL_RenderPresent(m_renderer);
-
+}
+void Jeu::boucle_jeu() {
     bool quit = false;
     SDL_Event event;
     while(!quit){
@@ -72,5 +63,7 @@ void Jeu::afficher_monde() {
                 if(event.key.keysym.sym == SDLK_ESCAPE) quit = true;
         }
 
+        afficher_monde();
+        SDL_RenderPresent(m_renderer);
     }
 }
