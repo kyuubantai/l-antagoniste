@@ -397,6 +397,8 @@ tabCarte[8].tabCase[5][10].libre=true;
 tabCarte[8].tabCase[0][6].sortie=true;
 tabCarte[8].tabCase[3][11].sortie=true;
 
+tabCarte[8].tabCase[4][2].libre=true; //case ennemi
+
 
 //___________________________________________________
 //zone départ
@@ -408,7 +410,6 @@ tabCarte[9].tabCase[1][4].libre=true;
 tabCarte[9].tabCase[1][5].libre=true;
 tabCarte[9].tabCase[1][6].libre=true;
 tabCarte[9].tabCase[1][7].libre=true;
-tabCarte[9].tabCase[1][9].libre=true;
 
 tabCarte[9].tabCase[2][4].libre=true;
 tabCarte[9].tabCase[2][5].libre=true;
@@ -445,6 +446,7 @@ tabCarte[9].tabCase[5][10].libre=true;
 tabCarte[9].tabCase[0][9].sortie=true;
 tabCarte[9].tabCase[3][0].sortie=true;
 
+tabCarte[9].tabCase[1][9].libre=true; //case ennemi
 
 //___________________________________________________
 
@@ -493,6 +495,7 @@ tabCarte[10].tabCase[5][10].libre=true;
 tabCarte[10].tabCase[0][6].sortie=true;
 tabCarte[10].tabCase[3][11].sortie=true;
 
+tabCarte[10].tabCase[3][1].libre=true; //case ennemi
 
 //___________________________________________________
 
@@ -542,7 +545,7 @@ tabCarte[11].tabCase[0][9].sortie=true;
 tabCarte[11].tabCase[3][0].sortie=true;
 
 tabCarte[11].tabCase[5][6].libre=true; //case ennemi
-
+tabCarte[11].tabCase[3][10].libre=true; //case ennemi
 
 }
 
