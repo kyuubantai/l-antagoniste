@@ -31,12 +31,12 @@ void Deplacement::deplace(char action) {
         switch (action)
         {
             case 'h':
-                new_x=6;
+                new_x=5;
                 monde.setX(new_x);
                 monde.setCarte(carteX-4);
                 break;
             case 'b':
-                new_x=0
+                new_x=1;
                 monde.setX(new_x);
                 monde.setCarte(carteX+4);
                 break;
@@ -46,7 +46,7 @@ void Deplacement::deplace(char action) {
                 monde.setCarte(carteX-1);
                 break;
             case 'd':
-                new_y=0;
+                new_y=1;
                 monde.setY(new_y);
                 monde.setCarte(carteX+1);
                 break;
