@@ -102,10 +102,12 @@ tabCarte[2].tabCase[3][0].libre=true;
 tabCarte[2].tabCase[3][1].libre=true;
 tabCarte[2].tabCase[3][2].libre=true;
 tabCarte[2].tabCase[3][3].libre=true;
+tabCarte[2].tabCase[3][4].libre=true;
 tabCarte[2].tabCase[3][5].libre=true;
 
 tabCarte[2].tabCase[4][1].libre=true;
 tabCarte[2].tabCase[4][2].libre=true;
+tabCarte[2].tabCase[4][3].libre=true;
 tabCarte[2].tabCase[4][6].libre=true;
 tabCarte[2].tabCase[4][7].libre=true;
 tabCarte[2].tabCase[4][8].libre=true;
