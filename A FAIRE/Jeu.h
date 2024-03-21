@@ -2,6 +2,7 @@
 #define __JEU__H
 
 #include "Monde.h"
+//#include "Personnage.h"
 //#include "Combat.h"
 #include "Deplacement.h"
 #include "GestionImage.h"
@@ -16,7 +17,11 @@ class Jeu {
     //lien sur SDL_Renderer
         SDL_Renderer * m_renderer;
     // éventuellement d’autres données (ex. SDL_Surface et SDL_Texture)
-        GestionImage map;
+        GestionImage map[9];
+        GestionImage perso;
+        GestionImage ennemi;
+        GestionImage pnj;
+        GestionImage obj;
         SDL_Surface * m_surface;
         SDL_Texture * m_texture;
         bool m_hasChanged;
@@ -26,6 +31,7 @@ class Jeu {
         Jeu();
         ~Jeu();
         void afficher_monde();
+        void boucle_jeu();
         void boucle_combat();
 
 };
