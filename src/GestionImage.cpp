@@ -22,8 +22,8 @@ void GestionImage::free()
     cout<<"GestionImage::free"<<endl;
     if (m_texture != nullptr)
     {
-        cout<<"GestionImage::free: "<<m_texture<<endl;
-        SDL_DestroyTexture(m_texture);
+        /*cout<<"GestionImage::free: "<<m_texture<<endl;
+        SDL_DestroyTexture(m_texture);*/
         m_texture = nullptr;
     }
     if (m_surface != nullptr)
