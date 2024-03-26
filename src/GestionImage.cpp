@@ -59,22 +59,32 @@ void GestionImage::loadFile(const char *filename, SDL_Renderer *renderer)
 
 void GestionImage::loadMap(SDL_Renderer *renderer, int nCarte)
 {
+    //if (nCarte == 0)
+    //    loadFile("data/Map0.png", renderer);
     if (nCarte == 1)
-        loadFile("data/Map10.png", renderer);
-    if (nCarte == 2)
         loadFile("data/Map2.png", renderer);
-    if (nCarte == 3)
+    if (nCarte == 2)
         loadFile("data/Map3.png", renderer);
-    /*if(nCarte==4) m_surface = IMG_Load("data/Map4.png");
-    if(nCarte==5) m_surface = IMG_Load("data/Map5.png");
-    if(nCarte==6) m_surface = IMG_Load("data/Map6.png");
-    if(nCarte==7) m_surface = IMG_Load("data/Map7.png");
-    if(nCarte==8) m_surface = IMG_Load("data/Map8.png");
-    if(nCarte==9) m_surface = IMG_Load("data/Map9.png");
-    if(nCarte==10) m_surface = IMG_Load("data/Map10.png");
-    //if(nCarte==11) m_surface = IMG_Load("data/Map11.png");
-    //if(nCarte==12) m_surface = IMG_Load("data/Map12.png");*/
-}
+    //if (nCarte == 4)
+    //    loadFile("data/Map3.png", renderer);
+    if (nCarte == 4)
+        loadFile("data/Map5.png", renderer);
+    if (nCarte == 5)
+        loadFile("data/Map6.png", renderer);
+    /*if (nCarte == 7)
+        loadFile("data/Map6.png", renderer);
+    if (nCarte == 8)
+        loadFile("data/Map7.png", renderer);
+    */
+    if (nCarte == 8) 
+        loadFile("data/Map9.png", renderer);
+    if (nCarte == 9)
+        loadFile("data/Map10.png", renderer);
+    /*if (nCarte == 10)
+        loadFile("data/Map10.png", renderer);
+    if (nCarte == 11)
+        loadFile("data/Map11.png", renderer);
+*/}
 void GestionImage::loadPerso(SDL_Renderer * renderer,char sprite_perso) {
     switch (sprite_perso) 
     {
