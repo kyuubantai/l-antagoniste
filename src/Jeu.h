@@ -17,7 +17,7 @@ class Jeu {
     //lien sur SDL_Renderer
         SDL_Renderer * m_renderer;
     // éventuellement d’autres données (ex. SDL_Surface et SDL_Texture)
-        GestionImage map[9];
+        GestionImage map[12];
         GestionImage perso;
         GestionImage ennemi;
         GestionImage pnj;
