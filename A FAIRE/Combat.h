@@ -1,19 +1,16 @@
-#include "Combat.h"
-#include <iostream>
+#ifndef __COMBAT__H
+#define __COMBAT__H
 
-using namespace std;
+#include "Heros.h"
 
-Combat::Combat(){
-    nbtour = 1;
-}
+enum Tour {MOI,ENNEMI};
 
-Combat::~Combat(){};
+class Combat {
+    public:
+        Tour tour;
+        void combat(Heros heros);
 
-bool Combat::combat(){
-    bool fin = false;
-    while(!fin){
-        (turn == Hero) ? cout<< "VOTRE TOUR"<< endl : cout << "TOUR ENNEMI"<<endl;
-        if(hero.heros.comp)
+};
 
-    }
-}
+
+#endif
