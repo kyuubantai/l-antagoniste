@@ -16,10 +16,11 @@ private:
 public:
     GestionImage();
     ~GestionImage();
+    void free();
     void loadFile (const char* filename, SDL_Renderer * renderer);
     void loadMap (SDL_Renderer * renderer,int i);
     void draw (SDL_Renderer * renderer, int x, int y, int w, int h);
-    SDL_Texture * getTexture() const;
+    //SDL_Texture * getTexture() const;
 };
-inline SDL_Texture * GestionImage::getTexture() const {return m_texture;};
+//inline SDL_Texture * GestionImage::getTexture() const {return m_texture;};
 #endif
