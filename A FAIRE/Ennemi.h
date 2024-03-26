@@ -6,12 +6,9 @@ using namespace std;
 
 class Ennemi {
 	public:
-		Personnage mob;	
+		Personnage stats;	
 		Ennemi();
-		~Ennemi();
-		Personnage boss();
-		Personnage tank();
-		Personnage light();
+
 };
 
 #endif
