@@ -75,6 +75,37 @@ void GestionImage::loadMap(SDL_Renderer *renderer, int nCarte)
     //if(nCarte==11) m_surface = IMG_Load("data/Map11.png");
     //if(nCarte==12) m_surface = IMG_Load("data/Map12.png");*/
 }
+void GestionImage::loadPerso(SDL_Renderer * renderer,char sprite_perso) {
+    switch (sprite_perso) 
+    {
+        case 'g':
+            m_surface = IMG_Load("data/perso.png");
+            break;
+        case 'd':
+            m_surface = IMG_Load("data/perso.png");
+            break;
+        case 'h':
+            m_surface = IMG_Load("data/perso.png");
+            break;
+        case 'b':
+            m_surface = IMG_Load("data/perso.png");
+            break;
+        default :
+            m_surface = IMG_Load("data/perso.png");
+            break;
+    }
+    if(m_surface == nullptr) {  
+        cout << "Erreur lors du chargement du personnage"<<endl<<SDL_GetError()<<endl;
+        SDL_Quit();
+        exit(1);
+    }
+    m_texture = SDL_CreateTextureFromSurface(renderer,m_surface);
+    if (m_texture == nullptr) {
+        cout << "Error: problème lors de la création de la texture " << endl;
+        SDL_Quit();
+        exit(1);
+    }
+}
 
 void GestionImage::draw(SDL_Renderer *renderer, int x, int y, int w = -1, int h = -1)
 {
