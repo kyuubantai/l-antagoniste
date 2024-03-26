@@ -411,6 +411,7 @@ tabCarte[9].tabCase[1][4].libre=true;
 tabCarte[9].tabCase[1][5].libre=true;
 tabCarte[9].tabCase[1][6].libre=true;
 tabCarte[9].tabCase[1][7].libre=true;
+tabCarte[9].tabCase[1][10].libre=true;
 
 tabCarte[9].tabCase[2][4].libre=true;
 tabCarte[9].tabCase[2][5].libre=true;
