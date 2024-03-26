@@ -19,6 +19,7 @@ public:
     void free();
     void loadFile (const char* filename, SDL_Renderer * renderer);
     void loadMap (SDL_Renderer * renderer,int i);
+    void loadPerso (SDL_Renderer * renderer,char sprite_perso);
     void draw (SDL_Renderer * renderer, int x, int y, int w, int h);
     //SDL_Texture * getTexture() const;
 };
