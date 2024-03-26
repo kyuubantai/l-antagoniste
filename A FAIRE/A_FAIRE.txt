@@ -12,3 +12,5 @@ Pour combat : gérer les menus -> menu de compétences
                               -> menu d'objets
                               -> battre en retraite
 Au lieu d'imbriquer des switch case dans des switch case, on peut créer une variable qui amène à un menu en particulier. Ainsi un menu va en appeler un autre.
+
+Dans un combat, il peut y avoir entre 1-3 ennemis. Il y a plusieurs combats. Donc on a un tableau de tableaux d'ennemis.
