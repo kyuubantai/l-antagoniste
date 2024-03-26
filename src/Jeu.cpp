@@ -17,8 +17,8 @@ Jeu::Jeu(): m_window(nullptr),m_surface(nullptr), m_texture(nullptr) {
     }
     m_renderer = SDL_CreateRenderer(m_window, -1,SDL_RENDERER_ACCELERATED);
     //Loads d'image
-    for(int i = 0;i<3;i++){
-    map[i].loadMap(m_renderer,i+1);
+    for(int i = 0;i<12;i++){
+    map[i].loadMap(m_renderer,i);
     }
     //Load Personnage
     perso.loadPerso(m_renderer,sprite_perso);
@@ -38,8 +38,8 @@ Jeu::~Jeu(){
     SDL_Quit();
 }
 void Jeu::afficher_monde(){
-    //int x,y;
-    map[0].draw(m_renderer,0,0,192*proportion,112*proportion);
+    int nCarte =m.getCarte();
+    map[nCarte].draw(m_renderer,0,0,192*proportion,112*proportion);
 }
 
 void Jeu::afficher_perso(char& sprite_perso){
@@ -60,24 +60,29 @@ void Jeu::boucle_jeu() {
             {
                 case SDL_KEYDOWN:
                     switch(event.key.keysym.sym){
-                        case SDLK_LEFT:
+                        case SDLK_LEFT :
+                        case SDLK_q :
                             d.deplace('g');
                             sprite_perso='g';
                             cout<<m.getY()<<endl;
                             break;
                         case SDLK_RIGHT:
+                        case SDLK_d :
                             d.deplace('d');
                             sprite_perso='d';
                             break;
                         case SDLK_UP:
+                        case SDLK_z :
                             d.deplace('h');
                             sprite_perso='h';
                             cout<<m.getX()<<endl;
                             break;
                         case SDLK_DOWN:
+                        case SDLK_s :
                             d.deplace('b');
                             sprite_perso='b';
                             break;
+                    
                         default:
                             break;
                     }
