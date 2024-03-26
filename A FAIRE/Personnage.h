@@ -12,17 +12,15 @@ class Personnage {
 		int energie;
 		Competence comp[3];
 	public:
-		int getVie();
+		int getVie() const;
 
-		void setVie(const int& nvVie);
+		void setVie(int nvVie);
 
-		int getAtk();
+		int getAtk() const;
 
-		void setAtk(const int& nvAtk);
+		void setAtk(int nvAtk);
 
-		int getNrj();
-
-		int getComp()
+		int getNrj() const;
 };
 
 #endif
