@@ -1,23 +1,14 @@
 TACHES à FAIRE :
 Combat.cpp
-Personnage.cpp
 
 Il y a 2 mode : Jeu et Combat.
 C'est la boucle principale qui gère l'alternation entre les 2
 Pour l'instant on fait Jeu et on fera Combat ensuite une fois que ça marche
 
 
+On a fait l'affichage textuel. On fait maintenant l'affichage graphique. Résoudre les problèmes avec SDL + afficher personnage qui se déplace sur les cartes
 
-
-
-Pour Mardi :
-
-- Utiliser wintxt (voir pacman) pour le déplacement avec les touches
-- créer module affichage texte (séparé du contrôleur)
-- voir si on peut rendre le code du constructeur du monde plus compacte https://www.mapeditor.org/
-
-
-
-
-COMBAT : Finir d'abord Personnage.cpp afin de récupérer les compétences pour les utiliser dans Combat.cpp
-Commencer Jeu.cpp
+Pour combat : gérer les menus -> menu de compétences
+                              -> menu d'objets
+                              -> battre en retraite
+Au lieu d'imbriquer des switch case dans des switch case, on peut créer une variable qui amène à un menu en particulier. Ainsi un menu va en appeler un autre.
