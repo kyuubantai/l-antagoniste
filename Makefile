@@ -1,11 +1,15 @@
 OBJ_FILES = Monde.o Deplacement.o winTxt.o JeuTxt.o mainTxt.o
+OBJ_AFF = Monde.o Deplacement.o Jeu.o mainJeu.o GestionImage.o
 CFLAGS = -Wall -ggdb
 LIBS = -lSDL2
 
-all: mainTest
+all: mainTest aff
 
 mainTest: $(OBJ_FILES)
 	g++ obj/winTxt.o obj/Monde.o obj/Deplacement.o obj/JeuTxt.o obj/mainTxt.o -o bin/mainTest
+
+aff: $(OBJ_AFF)
+	g++ obj/Monde.o obj/Deplacement.o obj/GestionImage.o obj/Jeu.o obj/mainJeu.o -o bin/mainAff -lSDL2 -lSDL2_image
 
 Carte.o: src/Carte.cpp src/Case.h
 	g++ $(CFLAGS) -c src/Carte.cpp -o obj/Carte.o
@@ -25,6 +29,15 @@ winTxt.o: src/winTxt.cpp
 mainTxt.o: src/mainTxt.cpp obj/JeuTxt.o obj/winTxt.o
 	g++ $(CFLAGS) -c src/mainTxt.cpp -o obj/mainTxt.o
 
+GestionImage.o : src/GestionImage.cpp src/GestionImage.h
+	g++ $(CFLAGS) -c src/GestionImage.cpp -o obj/GestionImage.o
+	
+Jeu.o : src/Jeu.cpp src/Jeu.h
+	g++ $(CFLAGS) -c src/Jeu.cpp -o obj/Jeu.o	
+
+mainJeu.o : src/mainJeu.cpp obj/Jeu.o
+	g++ $(CFLAGS) -c src/mainJeu.cpp -o obj/mainJeu.o
+
 
 clean:
-	rm $(OBJ_FILES)
+	rm $(OBJ_FILES) $(OBJ_AFF)
