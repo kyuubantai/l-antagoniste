@@ -1,43 +1,59 @@
 #include "Jeu.h"
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 
 
 
-Jeu::Jeu(): m_window(nullptr),m_surface(nullptr), m_texture(nullptr) {
+Jeu::Jeu(): m_window(nullptr) //,m_surface(nullptr), m_texture(nullptr) 
+{
     //Création fenêtre
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         cout << "Erreur lors de l'initialisation de la SDL : " << SDL_GetError() << endl;SDL_Quit();exit(1);
     }
-
+    
     m_window = SDL_CreateWindow("L'Antagoniste", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 192*5, 112*5, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     if (m_window == NULL) { 
         cout << "Erreur lors de la création de la fenetre : " << SDL_GetError() << endl; SDL_Quit(); exit(1);
     }
     m_renderer = SDL_CreateRenderer(m_window, -1,SDL_RENDERER_ACCELERATED);
+    assert(m_renderer);
+    
+
     //Loads d'image
-    for(int i = 0;i<3;i++){
-    map[i].loadMap(m_renderer,i+1);
-    }
+    /*for(int i = 0;i<1;i++){
+        map[i].loadMap(m_renderer,i+1);
+    }*/
+    maptest.loadFile("data/Map10.png", m_renderer);
 }
 
 Jeu::~Jeu(){
-    SDL_DestroyWindow(m_window);
+
+    cout<<"Jeu::~Jeu: start"<<endl;
+    int i;
+    //for(i=0;i<9;i++) map[9].free();
+    //cout<<"fin map 9"<<endl;
+    //perso.free();
+    //ennemi.free();
+    //pnj.free();
+    //obj.free();
+    cout<<"Jeu::~Jeu: 2"<<endl;
     SDL_DestroyRenderer(m_renderer);
-        if (m_texture != nullptr) {
-            SDL_DestroyTexture(m_texture);
-         }
-         if (m_surface != nullptr) {
-            SDL_FreeSurface(m_surface);
-        }
+    SDL_DestroyWindow(m_window);
     SDL_Quit();
+    cout<<"Jeu::~Jeu: end"<<endl;
 }
+
+
 void Jeu::afficher_monde(){
-    //int x,y;
-    map[0].draw(m_renderer,0,0,192*5,112*5);
-    SDL_RenderPresent(m_renderer);
+    //int x,y;  
+    //map[0].draw(m_renderer,0,0,192*5,112*5);
+//    SDL_RenderPresent(m_renderer);
 }
+
+
+
 void Jeu::boucle_jeu() {
     bool quit = false;
     SDL_Event event;
