@@ -4,27 +4,23 @@
 using namespace std;
 
 Ennemi::Ennemi(){
-    mob.setVie(100);
-    mob.setAtk(30);
-}
-Ennemi::~Ennemi(){
-    mob.setVie(0);
-    mob.setAtk(0);
+    stats.setVie(100);
+    stats.setAtk(30);
 }
 
 Personnage Ennemi::boss(){
-    mob.setVie(600);
-    mob.setAtk(60);
+    stats.setVie(600);
+    stats.setAtk(60);
 }
 
 Personnage Ennemi::tank(){
-    mob.setVie(300);
-    mob.setAtk(40);
+    stats.setVie(300);
+    stats.setAtk(40);
 }
 
 Personnage Ennemi::light(){
-    mob.setVie(50);
-    mob.setAtk(15);
+    stats.setVie(50);
+    stats.setAtk(15);
 }
 
 
