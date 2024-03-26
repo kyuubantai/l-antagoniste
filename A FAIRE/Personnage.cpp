@@ -3,22 +3,22 @@
 
 using namespace std;
 
-int Personnage::getVie(){
+int Personnage::getVie() const{
     return vie;
 }
 
-void Personnage::setVie(const int& nvVie){
+void Personnage::setVie(int nvVie){
     vie=nvVie;
 }
 
-int Personnage::getAtk(){
+int Personnage::getAtk() const{
     return atkBase;
 }
 
-void Personnage::setAtk(const int& nvAtk){
+void Personnage::setAtk(int nvAtk){
     atkBase=nvAtk;
 }
 
-int Personnage::getNrj(){
+int Personnage::getNrj() const{
     return energie;
 }
