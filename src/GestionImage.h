@@ -9,8 +9,8 @@ class GestionImage {
 
 private:
 
-    SDL_Surface * m_surface;
-    SDL_Texture * m_texture;
+    SDL_Surface *m_surface;
+    SDL_Texture *m_texture;
     bool m_hasChanged;
 
 public:
