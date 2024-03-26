@@ -5,9 +5,11 @@
 #include "Objet.h"
 using namespace std;
 
-struct Heros {
-	Personnage heros;
-    Objet invetaire[10];
+class Heros {
+    public:
+	    Personnage stats;
+        Objet invetaire[10];
+        Heros();
 };
 
 #endif
