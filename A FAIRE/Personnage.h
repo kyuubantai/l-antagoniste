@@ -5,6 +5,7 @@ struct Personnage {
 	int vie;
 	int vieMax;
 	int atkBase;
+	int def;
 	int energie;
 };
 
