@@ -4,6 +4,10 @@
 
 using namespace std;
 
+
+enum Etat{MENUBASE,SELECTION}; 
+
+
 Combat::Combat(){
     tour = MOI;
     ennemis.push_back(en1);
@@ -27,37 +31,41 @@ Ennemi selecteurEnnemi(int pos, vector<Ennemi> ennemis){
     }
 }
 
-//int getAction() return action
-void Combat::menuPersoBase(Heros hero, int action){
-    switch (action)
-    {
-    
-    case 1:  // Attaque basique
-        int action2;
-        break;
-    
-    case 2: // Garde
 
-        break;
-    
-    case 3 : // Compétences
+void Combat::menu(Heros hero, int action){
+    Etat etat;
+    if(etat == MENUBASE){
+        switch (action)
+        {
 
-        break;
+        case 1: // Attaque basique
+            etat = SELECTION;
+            Ennemi select = selecteurEnnemi(action,ennemis);
+            break;
+        
+        case 2: // Garde
 
-    case 4 : // Objets
+            break;
+        
+        case 3 : // Compétences
 
-        break;
-    case 0 : // Retraite 
+            break;
 
-        break;
-    
-    default:
-        break;
+        case 4 : // Objets
+
+            break;
+        case 0 : // Retraite 
+
+            break;
+        
+        default:
+            break;
+        }
     }
     
 }
 
-/*void Combat::combat(Heros heros,int action){
+/*void Combat::combat(Heros heros, int action){
     bool fin=false;
     int menu;
     char n;
