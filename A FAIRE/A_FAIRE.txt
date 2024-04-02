@@ -5,12 +5,10 @@ Il y a 2 mode : Jeu et Combat.
 C'est la boucle principale qui gère l'alternation entre les 2
 Pour l'instant on fait Jeu et on fera Combat ensuite une fois que ça marche
 
-
-On a fait l'affichage textuel. On fait maintenant l'affichage graphique. Résoudre les problèmes avec SDL + afficher personnage qui se déplace sur les cartes
-
 Pour combat : gérer les menus -> menu de compétences
                               -> menu d'objets
                               -> battre en retraite
 Au lieu d'imbriquer des switch case dans des switch case, on peut créer une variable qui amène à un menu en particulier. Ainsi un menu va en appeler un autre.
-
 Dans un combat, il peut y avoir entre 1-3 ennemis. Il y a plusieurs combats. Donc on a un tableau de tableaux d'ennemis.
+
+Gérer interactions sur Carte : PNJ,Coffres,Ennemis
