@@ -12,7 +12,7 @@ class Combat {
     private:
         Ennemi en1,en2,en3;
         vector<Ennemi> ennemis;
-        void menuPersoBase(Heros hero,int action);
+        void menu(Heros heros,int action);
         Ennemi selecteurEnnemi(int pos, vector<Ennemi> ennemis);
     public:
         Combat();
