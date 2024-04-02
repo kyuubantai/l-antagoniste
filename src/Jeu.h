@@ -20,8 +20,7 @@ class Jeu {
         GestionImage map[12];
         GestionImage perso;
         GestionImage ennemi;
-        GestionImage pnj;
-        GestionImage obj;
+        GestionImage dialogue;
         SDL_Surface * m_surface;
         SDL_Texture * m_texture;
         bool m_hasChanged;
@@ -33,6 +32,7 @@ class Jeu {
         ~Jeu();
         void afficher_monde();
         void afficher_perso(char& sprite_perso);
+        void afficher_dial();
         void boucle_jeu();
         void boucle_combat();
 
