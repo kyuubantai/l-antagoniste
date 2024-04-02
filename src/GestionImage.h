@@ -21,6 +21,7 @@ public:
     void loadMap (SDL_Renderer * renderer,int i);
     void loadPerso (SDL_Renderer * renderer,char sprite_perso);
     void draw (SDL_Renderer * renderer, int x, int y, int w, int h);
+    void creerDial(SDL_Renderer * renderer, int num_pnj,int num_dial);
     //SDL_Texture * getTexture() const;
 };
 //inline SDL_Texture * GestionImage::getTexture() const {return m_texture;};
