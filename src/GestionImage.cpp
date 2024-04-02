@@ -59,32 +59,31 @@ void GestionImage::loadFile(const char *filename, SDL_Renderer *renderer)
 
 void GestionImage::loadMap(SDL_Renderer *renderer, int nCarte)
 {
-    //if (nCarte == 0)
-    //    loadFile("data/Map0.png", renderer);
+    if (nCarte == 0)
+        loadFile("data/Map0.png", renderer);
     if (nCarte == 1)
-        loadFile("data/Map2.png", renderer);
+        loadFile("data/Map1.png", renderer);
     if (nCarte == 2)
+        loadFile("data/Map2.png", renderer);
+    if (nCarte == 3)
         loadFile("data/Map3.png", renderer);
-    //if (nCarte == 4)
-    //    loadFile("data/Map3.png", renderer);
     if (nCarte == 4)
-        loadFile("data/Map5.png", renderer);
+        loadFile("data/Map4.png", renderer);
     if (nCarte == 5)
+        loadFile("data/Map5.png", renderer);
+    if (nCarte == 6)
         loadFile("data/Map6.png", renderer);
-    /*if (nCarte == 7)
-        loadFile("data/Map6.png", renderer);
-    if (nCarte == 8)
+    if (nCarte == 7)
         loadFile("data/Map7.png", renderer);
-    */
     if (nCarte == 8) 
-        loadFile("data/Map9.png", renderer);
+        loadFile("data/Map8.png", renderer);
     if (nCarte == 9)
-        loadFile("data/Map10.png", renderer);
-    /*if (nCarte == 10)
+        loadFile("data/Map9.png", renderer);
+    if (nCarte == 10)
         loadFile("data/Map10.png", renderer);
     if (nCarte == 11)
         loadFile("data/Map11.png", renderer);
-*/}
+}
 void GestionImage::loadPerso(SDL_Renderer * renderer,char sprite_perso) {
     switch (sprite_perso) 
     {
