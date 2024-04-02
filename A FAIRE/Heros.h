@@ -7,13 +7,10 @@
 using namespace std;
 
 class Heros {
-    private:
-        Personnage stats;
-        string invetaire[10];
     public:
+	    Personnage stats;
+        string invetaire[10];
         Heros();
-        Personnage getStats() const;
-        void setStats(Personnage stats);
 };
 
 #endif
