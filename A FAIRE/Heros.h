@@ -1,15 +1,19 @@
 #ifndef __HEROS__H
 #define __HEROS__H
 
+#include <string>
 #include "Personnage.h"
-#include "Objet.h"
+
 using namespace std;
 
 class Heros {
+    private:
+        Personnage stats;
+        string invetaire[10];
     public:
-	    Personnage stats;
-        Objet invetaire[10];
         Heros();
+        Personnage getStats() const;
+        void setStats(Personnage stats);
 };
 
 #endif
