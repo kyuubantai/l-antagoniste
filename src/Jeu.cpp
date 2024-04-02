@@ -37,6 +37,7 @@ Jeu::~Jeu(){
         }
     SDL_Quit();
 }
+
 void Jeu::afficher_monde(){
     int nCarte =m.getCarte();
     map[nCarte].draw(m_renderer,0,0,192*proportion,112*proportion);
@@ -49,6 +50,10 @@ void Jeu::afficher_perso(char& sprite_perso){
         perso.loadPerso(m_renderer,sprite_perso);
         sprite_perso='a';
     }
+}
+
+void Jeu::afficher_dial(){
+    dialogue.creerDial(m_renderer,d.getPnj(),d.getDialogue());
 }
 
 void Jeu::boucle_jeu() {
@@ -82,6 +87,10 @@ void Jeu::boucle_jeu() {
                             d.deplace('b');
                             sprite_perso='b';
                             break;
+
+                        case SDLK_f :
+                            d.interaction();
+                            break;
                     
                         default:
                             break;
@@ -108,6 +117,7 @@ void Jeu::boucle_jeu() {
         SDL_RenderClear(m_renderer);
         afficher_monde();
         afficher_perso(sprite_perso);
+        afficher_dial();
         SDL_RenderPresent(m_renderer);
     }
 }
