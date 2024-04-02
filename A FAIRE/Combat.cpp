@@ -5,7 +5,7 @@
 using namespace std;
 
 
-enum Etat{MENUBASE,SELECTION}; 
+enum Etat{MENUBASE,SELECT,COMP,OBJ}; 
 
 
 Combat::Combat(){
@@ -33,29 +33,33 @@ Ennemi selecteurEnnemi(int pos, vector<Ennemi> ennemis){
 
 
 void Combat::menu(Heros hero, int action){
+    //bool garde = false;
     Etat etat;
     if(etat == MENUBASE){
         switch (action)
         {
 
         case 1: // Attaque basique
-            etat = SELECTION;
+            etat = SELECT;
             Ennemi select = selecteurEnnemi(action,ennemis);
             break;
         
         case 2: // Garde
-
+            //garde = true;
+            //hero.stats.def*=1.2;
             break;
         
         case 3 : // Compétences
-
+            etat = COMP;
+            //Competence select = selecteurComp(action,ennemis);
             break;
 
         case 4 : // Objets
-
+            etat = OBJ;
+            //string select = selecteurObj(action);
             break;
         case 0 : // Retraite 
-
+            //fin = true
             break;
         
         default:
