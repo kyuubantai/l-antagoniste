@@ -4,6 +4,7 @@
 using namespace std;
 
 Ennemi::Ennemi(){
-    stats.setVie(100);
-    stats.setAtk(30);
+    stats.vieMax=100;
+    stats.vie=100;
+    stats.atkBase=30;
 }
