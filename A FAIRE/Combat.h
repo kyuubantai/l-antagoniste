@@ -3,6 +3,7 @@
 
 #include "Heros.h"
 #include "Ennemi.h"
+#include "Competence.h"
 #include <vector>
 
 
@@ -14,6 +15,8 @@ class Combat {
         vector<Ennemi> ennemis;
         void menu(Heros heros,int action);
         Ennemi selecteurEnnemi(int pos, vector<Ennemi> ennemis);
+        Competence selecteurComp(int action,vector<Ennemi>ennemis);
+        string selecteurObj(int action);
     public:
         Combat();
         Tour tour;
