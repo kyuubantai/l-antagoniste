@@ -22,8 +22,7 @@ void GestionImage::free()
     cout<<"GestionImage::free"<<endl;
     if (m_texture != nullptr)
     {
-        /*cout<<"GestionImage::free: "<<m_texture<<endl;
-        SDL_DestroyTexture(m_texture);*/
+        cout<<"ERREUR DE TEXTURE"<<endl;
         m_texture = nullptr;
     }
     if (m_surface != nullptr)
@@ -55,6 +54,7 @@ void GestionImage::loadFile(const char *filename, SDL_Renderer *renderer)
         cout << "Error: problem to create the texture of " << filename << endl;
         SDL_Quit();
     }
+    SDL_FreeSurface(m_surface);
 }
 
 void GestionImage::loadMap(SDL_Renderer *renderer, int nCarte)
@@ -108,6 +108,7 @@ void GestionImage::loadPerso(SDL_Renderer * renderer,char sprite_perso) {
         SDL_Quit();
         exit(1);
     }
+    SDL_FreeSurface(m_surface);
     m_texture = SDL_CreateTextureFromSurface(renderer,m_surface);
     if (m_texture == nullptr) {
         cout << "Error: problème lors de la création de la texture " << endl;
@@ -130,3 +131,10 @@ void GestionImage::draw(SDL_Renderer *renderer, int x, int y, int w = -1, int h 
     }
     SDL_RenderCopy(renderer, m_texture, nullptr, &pos);
 }
+
+
+void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
+    
+}
+
+
