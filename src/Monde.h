@@ -2,6 +2,7 @@
 #define __MONDE__H
 
 #include "Carte.h"
+#include "Pnj.h"
 
 class Monde {
     private:
@@ -17,6 +18,7 @@ class Monde {
         void setY(const int& nvY);
         int getCarte() const;
         void setCarte(const int& nvCarte);
+        Pnj tabPnj[10];
 };
 
 
