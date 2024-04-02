@@ -4,7 +4,7 @@
 #include "Competence.h"
 using namespace std;
 
-class Personnage {
+struct Personnage {
 	public:
 		int vie;
 		int vieMax;
