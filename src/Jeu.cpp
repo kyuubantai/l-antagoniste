@@ -53,7 +53,11 @@ void Jeu::afficher_perso(char& sprite_perso){
 }
 
 void Jeu::afficher_dial(){
+    dialogue.draw(m_renderer,1*16*proportion,16*16 * proportion,16*proportion,16 * proportion);
     dialogue.creerDial(m_renderer,d.getPnj(),d.getDialogue());
+    if (d.getPnj()==0 && d.getDialogue()==2) {
+        d.setDialogue(1000);
+    }
 }
 
 void Jeu::boucle_jeu() {
