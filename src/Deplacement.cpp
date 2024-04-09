@@ -50,7 +50,6 @@ void Deplacement::interaction() {
     int pos_x=monde.getX();
     int pos_y=monde.getY();
     int carteX=monde.getCarte();
-    
     getPnj();
 
     for (int i=-1;i<2;i=i+2) {
