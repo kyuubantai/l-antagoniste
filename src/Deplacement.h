@@ -6,8 +6,8 @@
 class Deplacement {
     private:
         Monde monde;
-        int num_pnj=-1;
-        int num_dialogue=-1;
+        int num_pnj=1000;
+        int num_dialogue=1000;
     public:
         void deplace(char action);
         void interaction();
