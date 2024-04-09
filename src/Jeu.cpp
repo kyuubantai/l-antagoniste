@@ -55,12 +55,14 @@ void Jeu::afficher_perso(char& sprite_perso){
 void Jeu::afficher_dial(){
     dialogue.draw(m_renderer,1*16*proportion,16*16 * proportion,16*proportion,16 * proportion);
     dialogue.creerDial(m_renderer,d.getPnj(),d.getDialogue());
-    if (d.getPnj()==0 && d.getDialogue()==2) {
+    if (d.getPnj()==0 && d.getDialogue()==2) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
         d.setDialogue(1000);
     }
+
 }
 
 void Jeu::boucle_jeu() {
+    std::cout<<"a"<<std::endl;
     bool quit = false;
     SDL_Event event;
     while(!quit){
@@ -104,7 +106,7 @@ void Jeu::boucle_jeu() {
 
                     switch (event.window.event) {
 
-                        case SDL_WINDOWEVENT_CLOSE:   // exit game
+                        case SDL_WINDOWEVENT_CLOSE:   // exit 
                             quit=true;
                             break;
                         default:
@@ -114,8 +116,8 @@ void Jeu::boucle_jeu() {
                 default:
                     break;
 
-                }
-                if(event.key.keysym.sym == SDLK_ESCAPE) quit = true;
+            }
+            if(event.key.keysym.sym == SDLK_ESCAPE) quit = true;
                 
         }
         SDL_RenderClear(m_renderer);
