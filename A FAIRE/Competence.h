@@ -4,8 +4,9 @@
 
 class Competence {
     public:
-        int atk(const int& atk,int& vie_ennemi); //paramètre ttes les attaques
-        int soin(const int& vie,int& vie_perso);
+        int atkMono(int vie_ennemi,int& energie,const int atk);
+        int atkMulti(int vie_ennemi,int& energie,const int atk);
+        int soin(int vie_perso,int& energie,const int vieMax_perso);
 
 
 };
