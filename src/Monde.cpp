@@ -4,6 +4,13 @@ Monde::Monde(){
     mX=2;
     mY=5;
     mCarte=9;
+
+
+//_____________PNJ_PLACEMENT_________________________
+
+
+tabCarte[5].tabCase[1][7].pnj=true;
+
 //___________________________________________________
 
 
@@ -15,8 +22,23 @@ for(i=1;i<6;i++)
         tabCarte[0].tabCase[i][j].libre=true;
     }
 }
+tabCarte[0].tabCase[4][1].libre=false;
+tabCarte[0].tabCase[4][2].libre=false;
+tabCarte[0].tabCase[4][10].libre=false;
 
-tabCarte[0].tabCase[2][11].libre=true;
+tabCarte[0].tabCase[5][1].libre=false;
+tabCarte[0].tabCase[5][2].libre=false;
+tabCarte[0].tabCase[5][3].libre=false;
+tabCarte[0].tabCase[5][4].libre=false;
+tabCarte[0].tabCase[5][5].libre=false;
+tabCarte[0].tabCase[5][6].libre=false;
+tabCarte[0].tabCase[5][7].libre=false;
+tabCarte[0].tabCase[5][8].libre=false;
+tabCarte[0].tabCase[5][9].libre=false;
+tabCarte[0].tabCase[5][10].libre=false;
+
+
+tabCarte[0].tabCase[2][11].libre=true;  
 
 tabCarte[0].tabCase[2][11].sortie=true;
 
@@ -242,10 +264,12 @@ tabCarte[4].tabCase[5][6].libre=true; //case ennemi
 
 tabCarte[5].tabCase[0][3].libre=true;
 
+tabCarte[5].tabCase[1][1].libre=true;
 tabCarte[5].tabCase[1][2].libre=true;
 tabCarte[5].tabCase[1][4].libre=true;
 tabCarte[5].tabCase[1][5].libre=true;
-tabCarte[5].tabCase[1][7].libre=true;
+tabCarte[5].tabCase[1][6].libre=true;
+tabCarte[5].tabCase[1][8].libre=true;
 
 tabCarte[5].tabCase[2][1].libre=true;
 tabCarte[5].tabCase[2][2].libre=true;
@@ -349,6 +373,19 @@ for(i=1;i<6;i++)
         tabCarte[7].tabCase[i][j].libre=true;
     }
 }
+
+tabCarte[7].tabCase[1][2].libre=false;
+tabCarte[7].tabCase[3][3].libre=false;
+tabCarte[7].tabCase[3][1].libre=false;
+tabCarte[7].tabCase[3][3].libre=false;
+tabCarte[7].tabCase[3][4].libre=false;
+tabCarte[7].tabCase[3][5].libre=false;
+tabCarte[7].tabCase[3][6].libre=false;
+tabCarte[7].tabCase[3][7].libre=false;
+tabCarte[7].tabCase[3][8].libre=false;
+tabCarte[7].tabCase[3][9].libre=false;
+tabCarte[7].tabCase[3][10].libre=false;
+
 
 tabCarte[7].tabCase[0][2].libre=true;
 tabCarte[7].tabCase[6][9].libre=true;
