@@ -128,21 +128,25 @@ void GestionImage::draw(SDL_Renderer *renderer, int x, int y, int w = -1, int h 
 
 void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
     switch(num_pnj) {
-        case 0 : 
-        num_dial=0;
-            if (num_dial==0) {
-                m_surface = IMG_Load("data/dial0_0.png");
-            }
-            //if (num_dial==1) m_surface = IMG_Load("data/dial0_1.png");
-            //if (num_dial==2) m_surface = IMG_Load("data/dial0_2.png");
-            //if (num_dial==3) m_surface = IMG_Load("data/dial0_3.png");
+        case 51 : 
+        switch(num_dial) {
+            case 0 : m_surface = IMG_Load("data/dial0_0.png");
+            std::cout<<"dial00"<<std::endl;
+            break;
+            case 1 : m_surface = IMG_Load("data/dial0_0.png");
+            std::cout<<"dial01"<<std::endl;
+            break;
+            case 2 : m_surface = IMG_Load("data/dial0_0.png");
+            break;
+            default :
+            break;
+        }
             break;
         case 1 : 
             //if (num_dial==4) m_surface = IMG_Load("data/dial1_4.png");
             break;
         default :
-            m_surface = IMG_Load("data/dial0_0.png");
-            num_pnj=999;
+            num_pnj=1000;
             break;
     }
     if (num_pnj!=1000) {
