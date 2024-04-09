@@ -48,21 +48,22 @@ void Jeu::afficher_perso(char& sprite_perso){
     perso.draw(m_renderer,m.getY()*16*proportion,m.getX()*16 * proportion,16*proportion,16 * proportion);
     if (sprite_perso!='a') {
         perso.loadPerso(m_renderer,sprite_perso);
+
         sprite_perso='a';
     }
 }
 
 void Jeu::afficher_dial(){
-    dialogue.draw(m_renderer,1*16*proportion,16*16 * proportion,16*proportion,16 * proportion);
-    dialogue.creerDial(m_renderer,d.getPnj(),d.getDialogue());
-    if (d.getPnj()==0 && d.getDialogue()==2) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
-        d.setDialogue(1000);
+    dialogue.draw(m_renderer,proportion,78*proportion,190*proportion,30*proportion);
+    if (d.getPnj()==1000) {
+        dialogue.creerDial(m_renderer,d.getPnj(),d.getDialogue());
+        if (d.getPnj()==0 && d.getDialogue()==2) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
+            d.setDialogue(1000);
+        }
     }
-
 }
 
 void Jeu::boucle_jeu() {
-    std::cout<<"a"<<std::endl;
     bool quit = false;
     SDL_Event event;
     while(!quit){
@@ -75,7 +76,6 @@ void Jeu::boucle_jeu() {
                         case SDLK_q :
                             d.deplace('g');
                             sprite_perso='g';
-                            cout<<m.getY()<<endl;
                             break;
                         case SDLK_RIGHT:
                         case SDLK_d :
@@ -86,7 +86,6 @@ void Jeu::boucle_jeu() {
                         case SDLK_z :
                             d.deplace('h');
                             sprite_perso='h';
-                            cout<<m.getX()<<endl;
                             break;
                         case SDLK_DOWN:
                         case SDLK_s :
