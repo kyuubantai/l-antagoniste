@@ -14,12 +14,6 @@ GestionImage::GestionImage()
 GestionImage::~GestionImage()
 {
     cout<<"GestionImage::~GestionImage"<<endl;
-    free();
-}
-
-void GestionImage::free()
-{
-    cout<<"GestionImage::free"<<endl;
     if (m_texture != nullptr)
     {
         cout<<"ERREUR DE TEXTURE"<<endl;
@@ -88,19 +82,19 @@ void GestionImage::loadPerso(SDL_Renderer * renderer,char sprite_perso) {
     switch (sprite_perso) 
     {
         case 'g':
-            m_surface = IMG_Load("data/perso.png");
+            m_surface = IMG_Load("data/perso/perso_left_walk.png");
             break;
         case 'd':
-            m_surface = IMG_Load("data/perso.png");
+            m_surface = IMG_Load("data/perso/perso_right_walk.png");
             break;
         case 'h':
-            m_surface = IMG_Load("data/perso.png");
+            m_surface = IMG_Load("data/perso/perso_top_walk.png");
             break;
         case 'b':
-            m_surface = IMG_Load("data/perso.png");
+            m_surface = IMG_Load("data/perso/perso_bot_walk.png");
             break;
         default :
-            m_surface = IMG_Load("data/perso.png");
+            m_surface = IMG_Load("data/perso/perso_defaut.png");
             break;
     }
     if(m_surface == nullptr) {  
@@ -114,7 +108,6 @@ void GestionImage::loadPerso(SDL_Renderer * renderer,char sprite_perso) {
         SDL_Quit();
         exit(1);
     }
-    SDL_FreeSurface(m_surface);
 }
 
 void GestionImage::draw(SDL_Renderer *renderer, int x, int y, int w = -1, int h = -1)
@@ -137,7 +130,9 @@ void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
     switch(num_pnj) {
         case 0 : 
         num_dial=0;
-            if (num_dial==0) m_surface = IMG_Load("data/dial0_0.png");
+            if (num_dial==0) {
+                m_surface = IMG_Load("data/dial0_0.png");
+            }
             //if (num_dial==1) m_surface = IMG_Load("data/dial0_1.png");
             //if (num_dial==2) m_surface = IMG_Load("data/dial0_2.png");
             //if (num_dial==3) m_surface = IMG_Load("data/dial0_3.png");
@@ -146,18 +141,18 @@ void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
             //if (num_dial==4) m_surface = IMG_Load("data/dial1_4.png");
             break;
         default :
-            num_pnj=1000;
+            m_surface = IMG_Load("data/dial0_0.png");
+            num_pnj=999;
             break;
     }
-
     if (num_pnj!=1000) {
         if(m_surface == nullptr) {  
             cout << "Erreur lors du chargement du dialogue"<<endl<<SDL_GetError()<<endl;
             SDL_Quit();
             exit(1);
         }
-        m_texture = SDL_CreateTextureFromSurface(renderer,m_surface);
-        if (m_texture == nullptr) {
+    m_texture = SDL_CreateTextureFromSurface(renderer,m_surface);;
+    if (m_texture == nullptr) {
             cout << "Error: problème lors de la création de la texture du dialogue" << endl;
             SDL_Quit();
             exit(1);
