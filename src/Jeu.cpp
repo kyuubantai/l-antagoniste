@@ -55,11 +55,14 @@ void Jeu::afficher_perso(char& sprite_perso){
 
 void Jeu::afficher_dial(){
     dialogue.draw(m_renderer,proportion,78*proportion,190*proportion,30*proportion);
-    if (d.getPnj()==1000) {
-        dialogue.creerDial(m_renderer,d.getPnj(),d.getDialogue());
-        if (d.getPnj()==0 && d.getDialogue()==2) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
+    if (num_pnj != 1000) {
+        dialogue.creerDial(m_renderer,num_pnj,d.getDialogue());
+        d.setDialogue(d.getDialogue()+1);
+        if (num_pnj==61 && d.getDialogue()==2) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
             d.setDialogue(1000);
+            d.setPnj(1000);
         }
+        d.setPnj(1000);
     }
 }
 
@@ -95,6 +98,7 @@ void Jeu::boucle_jeu() {
 
                         case SDLK_f :
                             d.interaction();
+                            num_pnj=d.getPnj();
                             break;
                     
                         default:
