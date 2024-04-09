@@ -27,6 +27,7 @@ class Jeu {
         Deplacement d;
         Monde m;
         char sprite_perso;
+        int num_pnj=1000;
     public:
         Jeu();
         ~Jeu();
