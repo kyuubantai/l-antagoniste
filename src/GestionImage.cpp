@@ -108,13 +108,13 @@ void GestionImage::loadPerso(SDL_Renderer * renderer,char sprite_perso) {
         SDL_Quit();
         exit(1);
     }
-    SDL_FreeSurface(m_surface);
     m_texture = SDL_CreateTextureFromSurface(renderer,m_surface);
     if (m_texture == nullptr) {
         cout << "Error: problème lors de la création de la texture " << endl;
         SDL_Quit();
         exit(1);
     }
+    SDL_FreeSurface(m_surface);
 }
 
 void GestionImage::draw(SDL_Renderer *renderer, int x, int y, int w = -1, int h = -1)
@@ -136,31 +136,32 @@ void GestionImage::draw(SDL_Renderer *renderer, int x, int y, int w = -1, int h 
 void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
     switch(num_pnj) {
         case 0 : 
-            //if (num_dial==0) m_surface = IMG_Load("data/dial0_0.png");
-            break; 
+        num_dial=0;
+            if (num_dial==0) m_surface = IMG_Load("data/dial0_0.png");
             //if (num_dial==1) m_surface = IMG_Load("data/dial0_1.png");
-            break; 
             //if (num_dial==2) m_surface = IMG_Load("data/dial0_2.png");
-            break; 
             //if (num_dial==3) m_surface = IMG_Load("data/dial0_3.png");
             break;
         case 1 : 
             //if (num_dial==4) m_surface = IMG_Load("data/dial1_4.png");
             break;
+        default :
+            num_pnj=1000;
+            break;
     }
 
-
-    if(m_surface == nullptr) {  
-        cout << "Erreur lors du chargement du personnage"<<endl<<SDL_GetError()<<endl;
-        SDL_Quit();
-        exit(1);
-    }
-    SDL_FreeSurface(m_surface);
-    m_texture = SDL_CreateTextureFromSurface(renderer,m_surface);
-    if (m_texture == nullptr) {
-        cout << "Error: problème lors de la création de la texture " << endl;
-        SDL_Quit();
-        exit(1);
+    if (num_pnj!=1000) {
+        if(m_surface == nullptr) {  
+            cout << "Erreur lors du chargement du dialogue"<<endl<<SDL_GetError()<<endl;
+            SDL_Quit();
+            exit(1);
+        }
+        m_texture = SDL_CreateTextureFromSurface(renderer,m_surface);
+        if (m_texture == nullptr) {
+            cout << "Error: problème lors de la création de la texture du dialogue" << endl;
+            SDL_Quit();
+            exit(1);
+        }
     }
 }
 
