@@ -9,7 +9,7 @@ using namespace std;
 class Heros {
     public:
 	    Personnage stats;
-        string invetaire[10];
+        string inventaire[10];
         Heros();
 };
 
