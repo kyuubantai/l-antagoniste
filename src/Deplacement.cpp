@@ -8,23 +8,29 @@ int Deplacement::getPnj() {
     int carteX=monde.getCarte();
     for (int i=-1;i<2;i=i+2) {    
         if (monde.tabCarte[carteX].tabCase[pos_x+i][pos_y].pnj || monde.tabCarte[carteX].tabCase[pos_x][pos_y+i].pnj) {
-            int pos_s=pos_x+i*100+pos_y;
+            int pos_s=pos_x+i+pos_y*100;
             switch(carteX) 
             {
-                case 0 : if (pos_s==703) {
-                    num_pnj=0;
-                    num_dialogue=0;
-                    break; 
-                    } else if (pos_s==504) {
+                case 0 : if (pos_s==202) {
                     num_pnj=1;
                     num_dialogue=0;
                     break; 
-                }
+                    } else if (pos_s==303) {
+                    num_pnj=2;
+                    num_dialogue=0;
+                    }
                 break;
+
                 case 1 : 
                     num_pnj=2;
                     num_dialogue=0;
                 break;
+
+                case 5 : if (pos_s==701) { // pos_x=1,pos_y=7 -> 701;
+                    num_pnj=51;
+                    num_dialogue=0;
+                    }
+                break; 
             }
         }
     }
@@ -36,9 +42,6 @@ void Deplacement::setPnj(const int& pnj) {
 }
 
 int Deplacement::getDialogue() {
-    if (num_dialogue != -1) {
-        num_dialogue+=1;
-    }   
     return num_dialogue;
 }
 
@@ -51,7 +54,6 @@ void Deplacement::interaction() {
     int pos_y=monde.getY();
     int carteX=monde.getCarte();
     getPnj();
-
     for (int i=-1;i<2;i=i+2) {
         if (monde.tabCarte[carteX].tabCase[pos_x+i][pos_y].ennemi) {
             //Lancé combat avec ennemi (Personnage)
