@@ -126,7 +126,7 @@ void GestionImage::draw(SDL_Renderer *renderer, int x, int y, int w = -1, int h 
 }
 
 
-void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
+void GestionImage::creerDial(SDL_Renderer *renderer,int& num_pnj,int num_dial) {
     switch(num_pnj) {
         case 51 : 
         switch(num_dial) {
@@ -137,6 +137,7 @@ void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
             std::cout<<"dial01"<<std::endl;
             break;
             case 2 : m_surface = IMG_Load("data/dial0_0.png");
+            std::cout<<"dial02"<<std::endl;
             break;
             default :
             break;
@@ -155,8 +156,8 @@ void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
             SDL_Quit();
             exit(1);
         }
-    m_texture = SDL_CreateTextureFromSurface(renderer,m_surface);;
-    if (m_texture == nullptr) {
+        m_texture = SDL_CreateTextureFromSurface(renderer,m_surface);;
+        if (m_texture == nullptr) {
             cout << "Error: problème lors de la création de la texture du dialogue" << endl;
             SDL_Quit();
             exit(1);
