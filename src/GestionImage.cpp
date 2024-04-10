@@ -126,7 +126,7 @@ void GestionImage::draw(SDL_Renderer *renderer, int x, int y, int w = -1, int h 
 }
 
 
-void GestionImage::creerDial(SDL_Renderer *renderer,int& num_pnj,int num_dial) {
+void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
     switch(num_pnj) {
         case 51 : 
         switch(num_dial) {
