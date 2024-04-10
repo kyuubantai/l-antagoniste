@@ -3,37 +3,6 @@
 #include <iostream>
 
 int Deplacement::getPnj() {
-    int pos_x=monde.getX();
-    int pos_y=monde.getY();
-    int carteX=monde.getCarte();
-    for (int i=-1;i<2;i=i+2) {    
-        if (monde.tabCarte[carteX].tabCase[pos_x+i][pos_y].pnj || monde.tabCarte[carteX].tabCase[pos_x][pos_y+i].pnj) {
-            int pos_s=pos_x+i+pos_y*100;
-            switch(carteX) 
-            {
-                case 0 : if (pos_s==202) {
-                    num_pnj=1;
-                    num_dialogue=0;
-                    break; 
-                    } else if (pos_s==303) {
-                    num_pnj=2;
-                    num_dialogue=0;
-                    }
-                break;
-
-                case 1 : 
-                    num_pnj=2;
-                    num_dialogue=0;
-                break;
-
-                case 5 : if (pos_s==701) { // pos_x=1,pos_y=7 -> 701;
-                    num_pnj=51;
-                    num_dialogue=0;
-                    }
-                break; 
-            }
-        }
-    }
     return num_pnj;
 }
 
@@ -53,7 +22,38 @@ void Deplacement::interaction() {
     int pos_x=monde.getX();
     int pos_y=monde.getY();
     int carteX=monde.getCarte();
-    getPnj();
+    for (int i=-1;i<2;i=i+2) {    
+        if ( (monde.tabCarte[carteX].tabCase[pos_x+i][pos_y].pnj) || (monde.tabCarte[carteX].tabCase[pos_x][pos_y+i].pnj) ) {
+            int pos_s=pos_x+i+pos_y*100;
+            switch(carteX) 
+            {
+                case 0 : if (pos_s==202) {
+                    num_pnj=1;
+                    if (num_dialogue==1000) {num_dialogue=0;}
+                    else {num_dialogue++;}
+                    break; 
+                    } else if (pos_s==303) {
+                    num_pnj=2;
+                    if (num_dialogue==1000) {num_dialogue=0;}
+                    else {num_dialogue++;}
+                    }
+                break;
+
+                case 1 : 
+                    num_pnj=2;
+                    if (num_dialogue==1000) {num_dialogue=0;}
+                    else {num_dialogue++;}
+                break;
+
+                case 5 : if (pos_s==701) { // pos_x=1,pos_y=7 -> 701;
+                    num_pnj=51;
+                    if (num_dialogue==1000) {num_dialogue=0;}
+                    else {num_dialogue++;}
+                    }
+                break; 
+            }
+        }
+    }
     for (int i=-1;i<2;i=i+2) {
         if (monde.tabCarte[carteX].tabCase[pos_x+i][pos_y].ennemi) {
             //Lancé combat avec ennemi (Personnage)
@@ -84,22 +84,23 @@ void Deplacement::interaction() {
 void Deplacement::deplace(char action) {
     int new_x=monde.getX();
     int new_y=monde.getY();
-    switch (action)
-    {
-        case 'h':
-            new_x=new_x-1;
-            break;
-        case 'b':
-            new_x+=1;
-            break;
-        case 'g':
-            new_y=new_y-1;
-            break;
-        case 'd':
-            new_y+=1;
-            break;
+    if (num_dialogue==1000) {
+        switch (action)
+        {
+            case 'h':
+                new_x=new_x-1;
+                break;
+            case 'b':
+                new_x+=1;
+                break;
+            case 'g':
+                new_y=new_y-1;
+                break;
+            case 'd':
+                new_y+=1;
+                break;
+        }
     }
-
 
     int carteX=monde.getCarte();
     if (monde.tabCarte[carteX].tabCase[new_x][new_y].libre) {
