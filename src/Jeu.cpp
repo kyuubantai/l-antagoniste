@@ -48,22 +48,21 @@ void Jeu::afficher_perso(char& sprite_perso){
     perso.draw(m_renderer,m.getY()*16*proportion,m.getX()*16 * proportion,16*proportion,16 * proportion);
     if (sprite_perso!='a') {
         perso.loadPerso(m_renderer,sprite_perso);
-
         sprite_perso='a';
     }
 }
 
 void Jeu::afficher_dial(){
+    int num_dial=d.getDialogue();
     dialogue.draw(m_renderer,proportion,78*proportion,190*proportion,30*proportion);
-    if (num_pnj != 1000) {
-        dialogue.creerDial(m_renderer,num_pnj,d.getDialogue());
-        d.setDialogue(d.getDialogue()+1);
-        if (num_pnj==61 && d.getDialogue()==2) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
-            d.setDialogue(1000);
-            d.setPnj(1000);
-        }
+    dialogue.creerDial(m_renderer,num_pnj,num_dial);
+        std::cout<<d.getDialogue()<<endl;
+        std::cout<<d.getPnj()<<endl;
+    if (d.getPnj()==51 && d.getDialogue()==3) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
+        d.setDialogue(1000);    
         d.setPnj(1000);
     }
+    num_pnj=d.getPnj();
 }
 
 void Jeu::boucle_jeu() {
@@ -126,7 +125,9 @@ void Jeu::boucle_jeu() {
         SDL_RenderClear(m_renderer);
         afficher_monde();
         afficher_perso(sprite_perso);
+        if (num_pnj != 1000) {
         afficher_dial();
+        }
         SDL_RenderPresent(m_renderer);
     }
 }
