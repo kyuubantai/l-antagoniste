@@ -22,27 +22,36 @@ void Deplacement::interaction() {
     int pos_x=monde.getX();
     int pos_y=monde.getY();
     int carteX=monde.getCarte();
+    int newx=pos_x;
+    int newy=pos_y;
     for (int i=-1;i<2;i=i+2) {    
-        if ( (monde.tabCarte[carteX].tabCase[pos_x+i][pos_y].pnj) || (monde.tabCarte[carteX].tabCase[pos_x][pos_y+i].pnj) ) {
-            int pos_s=pos_x+i+pos_y*100;
+        if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].pnj) || (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].pnj) ) {
+            int pos_s=newx+newy*100;
             switch(carteX) 
             {
-                case 0 : if (pos_s==202) {
-                    num_pnj=1;
+                case 1 : if (pos_s==5) { // pos_x=5,pos_y=0 -> 5;
+                    num_pnj=11;
                     if (num_dialogue==1000) {num_dialogue=0;}
                     else {num_dialogue++;}
                     break; 
-                    } else if (pos_s==303) {
-                    num_pnj=2;
+                    } else if (pos_s==704) {
+                    num_pnj=12;
                     if (num_dialogue==1000) {num_dialogue=0;}
                     else {num_dialogue++;}
                     }
                 break;
 
-                case 1 : 
-                    num_pnj=2;
+                case 3 :  if (pos_s==1) {
+                    num_pnj=31;
                     if (num_dialogue==1000) {num_dialogue=0;}
                     else {num_dialogue++;}
+                    break; 
+                    } else if (pos_s==204) {
+                    num_pnj=32;
+                    if (num_dialogue==1000) {num_dialogue=0;}
+                    else {num_dialogue++;}
+                    }
+
                 break;
 
                 case 5 : if (pos_s==701) { // pos_x=1,pos_y=7 -> 701;
@@ -51,6 +60,19 @@ void Deplacement::interaction() {
                     else {num_dialogue++;}
                     }
                 break; 
+
+                case 7 :  if (pos_s==406) {
+                    num_pnj=71;
+                    if (num_dialogue==1000) {num_dialogue=0;}
+                    else {num_dialogue++;}
+                    break; 
+                    } else if (pos_s==806) {
+                    num_pnj=72;
+                    if (num_dialogue==1000) {num_dialogue=0;}
+                    else {num_dialogue++;}
+                    }
+
+                break;
             }
         }
     }
