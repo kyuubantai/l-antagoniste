@@ -62,6 +62,31 @@ void Jeu::afficher_dial(){
         d.setDialogue(1000);    
         d.setPnj(1000);
     }
+    if (d.getPnj()==31 && d.getDialogue()==3) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
+        d.setDialogue(1000);    
+        d.setPnj(1000);
+    }
+    if (d.getPnj()==32 && d.getDialogue()==2) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
+        d.setDialogue(1000);    
+        d.setPnj(1000);
+    }
+    if (d.getPnj()==11 && d.getDialogue()==2) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
+        d.setDialogue(1000);    
+        d.setPnj(1000);
+    }
+    if (d.getPnj()==12 && d.getDialogue()==4) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
+        d.setDialogue(1000);    
+        d.setPnj(1000);
+    }
+    if (d.getPnj()==71 && d.getDialogue()==5) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
+        d.setDialogue(1000);    
+        d.setPnj(1000);
+    }
+    if (d.getPnj()==72 && d.getDialogue()==4) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
+        d.setDialogue(1000);    
+        d.setPnj(1000);
+    }
+    
     num_pnj=d.getPnj();
 }
 
