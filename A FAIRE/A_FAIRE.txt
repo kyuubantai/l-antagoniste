@@ -12,3 +12,10 @@ Au lieu d'imbriquer des switch case dans des switch case, on peut créer une var
 Dans un combat, il peut y avoir entre 1-3 ennemis. Il y a plusieurs combats. Donc on a un tableau de tableaux d'ennemis.
 
 Gérer interactions sur Carte : PNJ,Coffres,Ennemis
+-------------------------------------------------
+NOUVELLE TACHE A FAIRE : Combat.cpp
+Les menus et l'accès au sous-menus fonctionnent, maintenant faut corriger les sous-menus de sorte à ce que:
+-On puisse prévenir le joueur que la case qu'il a choisie est vide (pour objet et ennemi car ils ont le même warning)
+-Retour au menu principlal
+
+Implémanter la retraite et gérer le tour par tour grâce à est_valide
