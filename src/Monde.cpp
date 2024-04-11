@@ -10,6 +10,12 @@ Monde::Monde(){
 
 
 tabCarte[5].tabCase[1][7].pnj=true;
+tabCarte[1].tabCase[5][0].pnj=true;
+tabCarte[1].tabCase[4][7].pnj=true;
+tabCarte[3].tabCase[1][0].pnj=true;
+tabCarte[3].tabCase[4][2].pnj=true;
+tabCarte[7].tabCase[6][4].pnj=true;
+tabCarte[7].tabCase[6][8].pnj=true;
 
 //___________________________________________________
 
@@ -374,7 +380,8 @@ for(i=1;i<6;i++)
     }
 }
 
-tabCarte[7].tabCase[1][2].libre=false;
+tabCarte[7].tabCase[1][3].libre=false;
+tabCarte[7].tabCase[2][3].libre=false;
 tabCarte[7].tabCase[3][3].libre=false;
 tabCarte[7].tabCase[3][1].libre=false;
 tabCarte[7].tabCase[3][3].libre=false;
