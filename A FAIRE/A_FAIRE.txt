@@ -18,4 +18,4 @@ Les menus et l'accès au sous-menus fonctionnent, maintenant faut corriger les s
 -On puisse prévenir le joueur que la case qu'il a choisie est vide (pour objet et ennemi car ils ont le même warning)
 -Retour au menu principlal
 
-Implémanter la retraite et gérer le tour par tour grâce à est_valide
+Implémanter la retraite et gérer le tour par tour grâce à est_valide et le booléen true
