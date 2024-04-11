@@ -129,22 +129,92 @@ void GestionImage::draw(SDL_Renderer *renderer, int x, int y, int w = -1, int h 
 void GestionImage::creerDial(SDL_Renderer *renderer,int num_pnj,int num_dial) {
     switch(num_pnj) {
         case 51 : 
-        switch(num_dial) {
-            case 0 : m_surface = IMG_Load("data/dial0_0.png");
-            std::cout<<"dial00"<<std::endl;
+            switch(num_dial) {
+                case 0 : m_surface = IMG_Load("data/dial/dial6_00.png");
+                break;
+                case 1 : m_surface = IMG_Load("data/dial/dial6_01.png");
+                break;
+                case 2 : m_surface = IMG_Load("data/dial/dial6_02.png");
+                break;
+                default :
+                break;
+            }
             break;
-            case 1 : m_surface = IMG_Load("data/dial0_0.png");
-            std::cout<<"dial01"<<std::endl;
+        case 31 : 
+            switch(num_dial) {
+                case 0 : m_surface = IMG_Load("data/dial/dial3_00.png");
+                break;
+                case 1 : m_surface = IMG_Load("data/dial/dial3_01.png");
+                break;
+                case 2 : m_surface = IMG_Load("data/dial/dial3_02.png");
+                break;
+                default :
+                break;
+            }
             break;
-            case 2 : m_surface = IMG_Load("data/dial0_0.png");
-            std::cout<<"dial02"<<std::endl;
+        case 32 : 
+            switch(num_dial) {
+                case 0 : m_surface = IMG_Load("data/dial/dial3_10.png");
+                break;
+                case 1 : m_surface = IMG_Load("data/dial/dial3_11.png");
+                break;
+                default :
+                break;
+            }
             break;
-            default :
+        case 11 : 
+            switch(num_dial) {
+                case 0 : m_surface = IMG_Load("data/dial/dial1_00.png");
+                break;
+                case 1 : m_surface = IMG_Load("data/dial/dial1_01.png");
+                break;
+                default :
+                break;
+            }
             break;
-        }
+        case 12 : 
+            switch(num_dial) {
+                case 0 : m_surface = IMG_Load("data/dial/dial1_10.png");
+                break;
+                case 1 : m_surface = IMG_Load("data/dial/dial1_11.png");
+                break;
+                case 2 : m_surface = IMG_Load("data/dial/dial1_12.png");
+                break;
+                case 3 : m_surface = IMG_Load("data/dial/dial1_13.png");
+                break;
+                default :
+                break;
+            }
             break;
-        case 1 : 
-            //if (num_dial==4) m_surface = IMG_Load("data/dial1_4.png");
+        case 71 : 
+            switch(num_dial) {
+                case 0 : m_surface = IMG_Load("data/dial/dial8_00.png");
+                break;
+                case 1 : m_surface = IMG_Load("data/dial/dial8_01.png");
+                break;
+                case 2 : m_surface = IMG_Load("data/dial/dial8_02.png");
+                break;
+                case 3 : m_surface = IMG_Load("data/dial/dial8_03.png");
+                break;
+                case 4 : m_surface = IMG_Load("data/dial/dial8_04.png");
+                break;
+                default :
+                break;
+            }
+            break;
+        case 72 : 
+            switch(num_dial) {
+                case 0 : m_surface = IMG_Load("data/dial/dial8_10.png");
+                break;
+                case 1 : m_surface = IMG_Load("data/dial/dial8_11.png");
+                break;
+                case 2 : m_surface = IMG_Load("data/dial/dial8_12.png");
+                break;
+                case 3 : m_surface = IMG_Load("data/dial/dial8_13.png");
+                break;
+                default :
+                break;
+            }
             break;
         default :
             num_pnj=1000;
