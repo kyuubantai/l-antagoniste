@@ -77,23 +77,25 @@ EtatComp Combat::saisirComp(int choice){
 Ennemi Combat::selecteurEnnemi(int pos, vector<Ennemi> ennemis){
     switch (pos)
     {
-    case 0:
+    case 1:
+        cout<<"1 touché"<<endl;
         return ennemis[0];
         est_valide = true;
-        cout<<"1 touché"<<endl;
-        break;
-    case 1:
-        return ennemis[1];
-        est_valide = true;
-        cout<<"2 touché"<<endl;
         break;
     case 2:
+        cout<<"2 touché"<<endl;
+        return ennemis[1];
+        est_valide = true;
+        break;
+    case 3:
+        cout<<"3 touché"<<endl;
         return ennemis[2];
         est_valide = true;
-        cout<<"3 touché"<<endl;
+        break;
+    case 0:
+        etat = MENUBASE;
         break;
     default:
-        etat = MENUBASE;
         break;
     }
 }
@@ -102,43 +104,43 @@ string Combat::selecteurObj(int pos,Heros h){
     cout<<"sélecteur objet"<<endl;
     switch (pos)
     {
-    case 0:
+    case 1:
         return h.inventaire[0];
         est_valide = true;
         break;
-    case 1:
+    case 2:
         return h.inventaire[1];
         est_valide = true;
         break;
-    case 2:
+    case 3:
         return h.inventaire[2];
         est_valide = true;
         break;
-    case 3:
+    case 4:
         return h.inventaire[3];
         est_valide = true;
         break;
-    case 4:
+    case 5:
         return h.inventaire[4];
         est_valide = true;
         break;
-    case 5:
+    case 6:
         return h.inventaire[5];
         est_valide = true;
         break;
-    case 6:
+    case 7:
         return h.inventaire[6];
         est_valide = true;
         break;
-    case 7:
+    case 8:
         return h.inventaire[7];
         est_valide = true;
         break;
-    case 8:
+    case 9:
         return h.inventaire[8];
         est_valide = true;
         break;
-    case 9:
+    case 10:
         return h.inventaire[9];
         est_valide = true;
         break;
