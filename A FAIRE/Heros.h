@@ -10,6 +10,7 @@ class Heros {
     public:
 	    Personnage stats;
         string inventaire[10];
+        Heros();
 };
 
 #endif
