@@ -6,7 +6,7 @@ LIBS = -lSDL2 -lSDL2_image
 all: mainTest aff
 
 mainTest: $(OBJ_FILES)
-	g++ obj/winTxt.o obj/Monde.o obj/Deplacement.o obj/JeuTxt.o obj/mainTxt.o -o bin/mainTest
+	g++ obj/winTxt.o obj/Monde.o obj/Deplacement.o obj/JeuTxt.o obj/mainTxt.o -o bin/mainTxt
 
 aff: $(OBJ_AFF)
 	g++ obj/Monde.o obj/Deplacement.o obj/GestionImage.o obj/Jeu.o obj/mainJeu.o -o bin/mainAff $(LIBS)
