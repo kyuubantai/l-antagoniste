@@ -3,6 +3,14 @@
 
 #include "Monde.h"
 
+
+
+/**
+ * @class Deplacement
+ * 
+ * @brief Classe Deplacement 
+ * 
+ **/
 class Deplacement {
     private:
         Monde monde;
