@@ -9,6 +9,11 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+/**
+ * @class Jeu
+ *
+ * @brief Assemble les éléments du jeu et les affiche avec SDL.
+ **/
 class Jeu {
     private:    
 

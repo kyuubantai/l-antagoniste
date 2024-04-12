@@ -5,6 +5,11 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+/**
+ * @class GestionImage
+ *
+ * @brief Permet de charger les images dans le jeu.
+ **/
 class GestionImage {
 
 private:
