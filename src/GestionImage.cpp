@@ -16,7 +16,7 @@ GestionImage::~GestionImage()
     cout<<"GestionImage::~GestionImage"<<endl;
     if (m_texture != nullptr)
     {
-        cout<<"ERREUR DE TEXTURE"<<endl;
+        cout<<"FREE TEXTURE"<<endl;
         m_texture = nullptr;
     }
     if (m_surface != nullptr)
