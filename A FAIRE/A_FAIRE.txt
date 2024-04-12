@@ -3,16 +3,11 @@ Combat.cpp
 
 Il y a 2 mode : Jeu et Combat.
 C'est la boucle principale qui gère l'alternation entre les 2
-Pour l'instant on fait Jeu et on fera Combat ensuite une fois que ça marche
 
-Pour combat : gérer les menus -> menu de compétences
-                              -> menu d'objets
-                              -> battre en retraite
-Au lieu d'imbriquer des switch case dans des switch case, on peut créer une variable qui amène à un menu en particulier. Ainsi un menu va en appeler un autre.
-Dans un combat, il peut y avoir entre 1-3 ennemis. Il y a plusieurs combats. Donc on a un tableau de tableaux d'ennemis.
+Gérer interactions sur Carte : Coffres,Ennemis
 
-Gérer interactions sur Carte : PNJ,Coffres,Ennemis
 -------------------------------------------------
+
 NOUVELLE TACHE A FAIRE : Combat.cpp
 Les menus et l'accès au sous-menus fonctionnent, maintenant faut corriger les sous-menus de sorte à ce que:
 -On puisse prévenir le joueur que la case qu'il a choisie est vide (pour objet et ennemi car ils ont le même warning)
