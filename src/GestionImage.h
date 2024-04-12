@@ -8,7 +8,7 @@
 /**
  * @class GestionImage
  *
- * @brief Permet de charger les images dans le jeu.
+ * @brief Permet de charger les images dans le jeu avec SDL.
  **/
 class GestionImage {
 
