@@ -34,12 +34,41 @@ class Jeu {
         char sprite_perso;
         int num_pnj=1000;
     public:
+
+        /**
+        * @brief Constructeur du Jeu : initialise SDL, fenêtre et l'affichage.
+        **/
         Jeu();
+
+        /**
+        * @brief Destructeur de la classe
+        **/
         ~Jeu();
+
+        /**
+        * @brief Affiche la carte actuelle
+        **/
         void afficher_monde();
+
+        /**
+        * @brief Affiche le personnage
+        * @param sprite_perso Caractère permettant de savoir si le personnage est bien affiché.
+        **/
         void afficher_perso(char& sprite_perso);
+
+        /**
+        * @brief Affiche les boites de dialogues.
+        **/
         void afficher_dial();
+
+        /**
+        * @brief Récupère la saisie clavier et actualise l'affichage en conséquence.
+        **/
         void boucle_jeu();
+
+        /**
+        * @brief 
+        **/
         void boucle_combat();
 
 };
