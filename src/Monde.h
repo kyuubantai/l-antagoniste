@@ -6,7 +6,7 @@
 /**
  * @class Monde
  * 
- * @brief Crée le l'environnement du jeu et conserve la position
+ * @brief Crée les 12 Cartes de l'environnement du jeu et conserve la position
  * mx, my du personnage se déplaçant ainsi que la Carte mCarte où il se trouve.
  **/
 
