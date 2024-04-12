@@ -33,8 +33,12 @@ class Deplacement {
          * @return une copie du Monde
         **/
         Monde getMonde() const;
-        
+
+        /**
+         * @brief Récupère le numéro du PNJ.
+        **/
         int getPnj();
+        
         void setPnj(const int& pnj);
         int getDialogue();
         void setDialogue(const int& dial);
