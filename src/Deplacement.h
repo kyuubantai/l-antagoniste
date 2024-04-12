@@ -8,7 +8,7 @@
 /**
  * @class Deplacement
  *
- * @brief gère le déplacement et les interactions sur le Monde  
+ * @brief gère le déplacement et les interactions sur le Monde.
  **/
 class Deplacement {
     private:
@@ -19,7 +19,7 @@ class Deplacement {
 
         /**
          * @brief Effectue le déplacement dans le monde.
-         * @param action : l'action choisie par le joueur
+         * @param action : l'action choisie par le joueur.
         **/
         void deplace(char action);
 
@@ -29,8 +29,8 @@ class Deplacement {
         void interaction();
 
         /**
-         * @brief Récupère l'état actuel du Monde
-         * @return une copie du Monde
+         * @brief Récupère l'état actuel du Monde.
+         * @return une copie du Monde.
         **/
         Monde getMonde() const;
 
@@ -38,9 +38,22 @@ class Deplacement {
          * @brief Récupère le numéro du PNJ.
         **/
         int getPnj();
-        
+
+        /**
+         * @brief Modifie le numéro du PNJ.
+         * @param pnj : son nouveau numéro.
+        **/
         void setPnj(const int& pnj);
+
+        /**
+         * @brief Récupère le numéro du dialogue.
+        **/
         int getDialogue();
+
+        /**
+         * @brief Modifie le numéro du dialogue.
+         * @param dial : son nouveau numéro.
+        **/
         void setDialogue(const int& dial);
 };
 
