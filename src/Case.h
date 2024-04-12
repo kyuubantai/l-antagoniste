@@ -5,7 +5,7 @@
 /**
  * @struct Case
  * 
- * @brief Structure Case déterminant les propriétés possibles d'une Case
+ * @brief Détermine les propriétés possibles d'une Case.
  **/
 struct Case {
     bool libre=false;
