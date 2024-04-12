@@ -3,9 +3,12 @@
 12209838 COME KOUAME
 12202838 LUCAS DUCHAMP
 
-MANUEL :
-
-DESCRIPTION : C'est un jeu de type RPG avec des combats en tour par tour. Vous incarnez un personnage qui se surnomme "L'Antagoniste".
-
-
 ## L'Antagoniste
+# DESCRIPTION : 
+L'Antagoniste est un jeu de type RPG avec des combats en tour par tour. 
+Vous incarnez un personnage qui se surnomme "L'Antagoniste", comme son nom l'indique il est antipathique, malveillant et très mal élevé.
+Au cours de votre aventure vous allez rencontrez des PNJs, avec qui l'ont peut intéragir, des coffres pour y trouver des objets
+qui pourront être utilisés pour se battre avec des ennemis. 
+
+# Utilisisation :
+éxecuter la commande 'make' puis './bin/mainAff' pour la version graphique sinon './bin/mainTxt' pour la version dans le terminal.
