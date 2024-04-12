@@ -11,6 +11,12 @@ enum Tour {MOI,ENNEMI};
 enum Etat{MENUBASE,SELECT,COMP,OBJ,GUARD,RETREAT};
 enum EtatComp{MENUCOMP,MONO,MULTI,HEAL};
 
+
+/**
+ * @class Combat
+ *
+ * @brief Gère les combats.
+ **/
 class Combat {
     private:
         Ennemi en;

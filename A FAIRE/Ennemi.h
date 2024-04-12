@@ -4,9 +4,19 @@
 #include "Personnage.h"
 using namespace std;
 
+
+/**
+ * @class Ennemi
+ *
+ * @brief Statistiques des ennemis.
+ **/
 class Ennemi {
 	public:
-		Personnage stats;	
+		Personnage stats;
+
+        /**
+         * @brief Constructeur de la classe : initialise les statistiques des ennemis.
+         **/
 		Ennemi();
 
 };

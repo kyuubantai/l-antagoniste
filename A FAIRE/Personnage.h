@@ -1,6 +1,11 @@
 #ifndef __PERSONNAGE__H
 #define __PERSONNAGE__H
 
+/**
+ * @struct Personnage
+ *
+ * @brief Détermine les statistiques d'un personnage
+ **/
 struct Personnage {
 	int vie;
 	int vieMax;

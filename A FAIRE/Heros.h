@@ -6,10 +6,20 @@
 
 using namespace std;
 
+
+/**
+ * @class Heros
+ *
+ * @brief Statistiques du personnage et inventaire.
+ **/
 class Heros {
     public:
 	    Personnage stats;
         string inventaire[10];
+
+        /**
+         * @brief Constructeur de la classe : initialise les statistiques du héros.
+         **/
         Heros();
 };
 
