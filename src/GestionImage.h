@@ -31,31 +31,29 @@ class GestionImage {
         ~GestionImage();
 
         /**
-        * @brief
-        **/
-        void free();
-
-        /**
         * @brief Permet de charger une image dans le jeu.
-        * @param filename
-        * @param renderer
+        * @param filename le chemin du fichier.
+        * @param renderer le renderer de l'image.
         **/
         void loadFile (const char* filename, SDL_Renderer * renderer);
 
         /**
         * @brief Permet de charger l'apparence d'une des cartes dans le jeu.
-        * @param filename
-        * @param renderer
+        * @param filename le chemin du fichier.
+        * @param renderer le renderer de l'image.
         **/
         void loadMap (SDL_Renderer * renderer,int i);
 
         /**
-        * @brief
+        * @brief Permet de charger l'apparence d'une des cartes dans le jeu.
+        * @param renderer le renderer de l'image.
+        * @param sprite_perso le chemin de l'image du personnage voulue.
         **/
         void loadPerso (SDL_Renderer * renderer,char sprite_perso);
 
         /**
         * @brief
+        * @param renderer le renderer de l'image.
         **/
         void draw (SDL_Renderer * renderer, int x, int y, int w, int h);
 
