@@ -37,13 +37,13 @@ class Monde {
 
         /**
          * @brief Modifie la position horizontale mX.
-         * @param nvX l'entier représentant la nouvelle position horizontale.
+         * @param nvX : l'entier représentant la nouvelle position horizontale.
         **/
         void setX(const int& nvX);
 
         /**
          * @brief Modifie la position verticale mY.
-         * @param nvY l'entier représentant la nouvelle position verticale.
+         * @param nvY : l'entier représentant la nouvelle position verticale.
         **/
         void setY(const int& nvY);
 
@@ -54,7 +54,7 @@ class Monde {
 
         /**
          * @brief Modifie la Carte actuelle.
-         * @param nvCarte la nouvelle Carte.
+         * @param nvCarte : la nouvelle Carte.
         **/
         void setCarte(const int& nvCarte);
 };
