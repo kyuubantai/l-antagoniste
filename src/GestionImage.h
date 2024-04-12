@@ -45,20 +45,27 @@ class GestionImage {
         void loadMap (SDL_Renderer * renderer,int i);
 
         /**
-        * @brief Permet de charger l'apparence d'une des cartes dans le jeu.
+        * @brief Permet de charger l'image du personnage en fonction de la direction où il se dirige.
         * @param renderer le renderer de l'image.
-        * @param sprite_perso le chemin de l'image du personnage voulue.
+        * @param sprite_perso le chemin de l'image voulue du personnage.
         **/
         void loadPerso (SDL_Renderer * renderer,char sprite_perso);
 
         /**
-        * @brief
+        * @brief Dessine un rectangle grâce aux données en paramètre.
         * @param renderer le renderer de l'image.
+        * @param x la coordonnée horizontale de l'angle supérieur gauche du rectangle.
+        * @param y la coordonnée verticale de l'angle supérieur gauche du rectangle.
+        * @param w la largeur du rectangle.
+        * @param h la hauteur du rectangle.
         **/
         void draw (SDL_Renderer * renderer, int x, int y, int w, int h);
 
         /**
-        * @brief
+        * @brief Permet de créer les pages de dialogues en fonction du PNJ.
+        * @param renderer le renderer de l'image.
+        * @param num_pnj le numéro identifiant le pnj.
+        * @param num_dial le numéro du dialogue en question.
         **/
         void creerDial(SDL_Renderer * renderer, int num_pnj,int num_dial);
 
