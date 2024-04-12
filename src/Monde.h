@@ -36,25 +36,25 @@ class Monde {
         int getY();
 
         /**
-         * @brief Modifie la position horizontale mX actuelle.
-         * @param nvX l'entier représentant la nouvelle position mX
+         * @brief Modifie la position horizontale mX.
+         * @param nvX l'entier représentant la nouvelle position horizontale.
         **/
         void setX(const int& nvX);
 
         /**
-         * @brief Modifie la position horizontale mY actuelle.
-         * @param nvY l'entier représentant la nouvelle position mY
+         * @brief Modifie la position verticale mY.
+         * @param nvY l'entier représentant la nouvelle position verticale.
         **/
         void setY(const int& nvY);
 
         /**
-         * @brief Récupère mCarte la Carte actuelle.
+         * @brief Récupère mCarte, la Carte actuelle.
         **/
         int getCarte() const;
 
         /**
-         * @brief Modifie la Carte actuelle mCarte.
-         * @param nvY l'entier représentant la nouvelle position mY
+         * @brief Modifie la Carte actuelle.
+         * @param nvCarte la nouvelle Carte.
         **/
         void setCarte(const int& nvCarte);
 };
