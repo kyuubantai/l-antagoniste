@@ -12,22 +12,60 @@
  **/
 class GestionImage {
 
-private:
+    private:
 
-    SDL_Surface *m_surface;
-    SDL_Texture *m_texture;
-    bool m_hasChanged;
+        SDL_Surface *m_surface;
+        SDL_Texture *m_texture;
+        bool m_hasChanged;
 
-public:
-    GestionImage();
-    ~GestionImage();
-    void free();
-    void loadFile (const char* filename, SDL_Renderer * renderer);
-    void loadMap (SDL_Renderer * renderer,int i);
-    void loadPerso (SDL_Renderer * renderer,char sprite_perso);
-    void draw (SDL_Renderer * renderer, int x, int y, int w, int h);
-    void creerDial(SDL_Renderer * renderer, int num_pnj,int num_dial);
-    //SDL_Texture * getTexture() const;
+    public:
+
+        /**
+        * @brief Constructeur de la classe : initialise m_surface, m_texture et m_hasChanged
+        **/
+        GestionImage();
+
+        /**
+        * @brief Destructeur de la classe.
+        **/
+        ~GestionImage();
+
+        /**
+        * @brief
+        **/
+        void free();
+
+        /**
+        * @brief Permet de charger une image dans le jeu.
+        * @param filename
+        * @param renderer
+        **/
+        void loadFile (const char* filename, SDL_Renderer * renderer);
+
+        /**
+        * @brief Permet de charger l'apparence d'une des cartes dans le jeu.
+        * @param filename
+        * @param renderer
+        **/
+        void loadMap (SDL_Renderer * renderer,int i);
+
+        /**
+        * @brief
+        **/
+        void loadPerso (SDL_Renderer * renderer,char sprite_perso);
+
+        /**
+        * @brief
+        **/
+        void draw (SDL_Renderer * renderer, int x, int y, int w, int h);
+
+        /**
+        * @brief
+        **/
+        void creerDial(SDL_Renderer * renderer, int num_pnj,int num_dial);
+
+
+        //SDL_Texture * getTexture() const;
 };
 //inline SDL_Texture * GestionImage::getTexture() const {return m_texture;};
 #endif
