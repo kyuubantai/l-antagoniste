@@ -21,19 +21,73 @@ class Combat {
     private:
         Ennemi en;
         vector<Ennemi> ennemis;
+
+        /**
+         * @brief Menu principal des options de combat.
+         * @param heros les statistiques du Heros.
+         * @param action l'action choisie par le joueur.
+         **/
         void menu(Heros heros,int action);
+
+        /**
+         * @brief Permet de sélectionner un ennemi parmi les multiples possibilités.
+         * @param pos la position de l'Ennmi.
+         * @param ennemis un tableau dynamique (vector) d'Ennemi.
+         * @return l'Ennemi choisi.
+         **/
         Ennemi selecteurEnnemi(int pos, vector<Ennemi> ennemis);
+
+        /**
+         * @brief Sous-menu des compétences.
+         * @param action l'action choisie par le joueur.
+         * @param ennemis un tableau dynamique (vector) d'Ennemi.
+         * @param h les statistiques du Heros.
+         **/
         void selecteurComp(int action,vector<Ennemi>ennemis,Heros h);
-        Etat saisirchoix(int choice);
-        EtatComp saisirComp(int choice);
+
+        /**
+         * @brief Permet d'effectuer un choix.
+         * @param choix l'action choisie par le joueur.
+         * @return un nouvel Etat.
+         **/
+        Etat saisirchoix(int choix);
+
+        /**
+         * @brief Permet de choisir la compétence vouleur par le joueur.
+         * @param choix l'action choisie par le joueur.
+         * @return un nouvel EtatComp.
+         **/
+        EtatComp saisirComp(int choix);
+
+        /**
+         * @brief Récupère un objet dans l'inventaire à partir du choix du joueur.
+         * @param pos la position de l'objet dans l'inventaire.
+         * @param s les statistiques du Heros.
+         * @return une chaine de caractères correspondant à l'objet choisi.
+         **/
         string selecteurObj(int pos,Heros h);
+
     public:
-        Combat();
-        ~Combat();
         Etat etat;
         EtatComp et;
         bool fin;
         Tour tour;
+
+        /**
+         * @brief Constructeur de la classe : initialise les combats.
+         **/
+        Combat();
+
+        /**
+         * @brief Destructeur de la classe.
+         **/
+        ~Combat();
+
+        /**
+         * @brief Destructeur de la classe.
+         * @param heros statistiques du Heros.
+         * @param action action choisie par le joueur.
+         **/
         void combat(Heros heros,int action);
 
 };

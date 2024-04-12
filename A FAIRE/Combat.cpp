@@ -24,9 +24,9 @@ Combat::~Combat(){
     if(!ennemis.empty()) ennemis.clear();
 }
 
-Etat Combat::saisirchoix(int choice){
+Etat Combat::saisirchoix(int choix){
     Etat e;
-    switch (choice)
+    switch (choix)
     {
     case 1:
         e = SELECT;
@@ -51,9 +51,9 @@ Etat Combat::saisirchoix(int choice){
 
 }
 
-EtatComp Combat::saisirComp(int choice){
+EtatComp Combat::saisirComp(int choix){
     EtatComp Ec;
-    switch(choice){
+    switch(choix){
         case 1:
             Ec = MONO;
             break;
@@ -191,7 +191,7 @@ void Combat::selecteurComp(int action,vector<Ennemi>ennemis,Heros h){
 }
 
 
-void Combat::menu(Heros hero, int action){
+void Combat::menu(Heros heros, int action){
     cout<<"MENU PRINCIPAL"<<endl;
     //bool garde = false;
     int choix;
@@ -213,7 +213,7 @@ void Combat::menu(Heros hero, int action){
             case COMP:
                 cout<<"Sélectionne la comp"<<endl;
                 cin>>choix;
-                selecteurComp(choix,ennemis,hero);
+                selecteurComp(choix,ennemis,heros);
                 break;
             case GUARD:
                 cout<<"Garde"<<endl;
