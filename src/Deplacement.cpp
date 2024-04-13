@@ -24,9 +24,10 @@ void Deplacement::interaction() {
     int carteX=monde.getCarte();
     int newx=pos_x;
     int newy=pos_y;
+    int pos_s;
     for (int i=-1;i<2;i=i+2) {    
         if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].pnj) || (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].pnj) ) {
-            int pos_s=newx+newy*100;
+            pos_s=newx+newy*100;
             switch(carteX) 
             {
                 case 1 : if (pos_s==5) { // pos_x=5,pos_y=0 -> 5;
@@ -79,12 +80,28 @@ void Deplacement::interaction() {
     for (int i=-1;i<2;i=i+2) {
         if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].ennemi) || (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].ennemi) ) {
             //Lancé combat avec ennemi (Personnage)
+            pos_s=newx+newy*100; 
+            switch(CarteX) {
+                case 8 : if (pos_s==104) {
+                    
+                }
+                break;
+                case 9 : if (pos_s==203) {
+                    
+                }
+                break;
+                case 11 : if (pos_s==1005) {
+
+                }
+                break;
+            }
         }
     }
     
     for (int i=-1;i<2;i=i+2) {
         if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].coffre) ||  (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].coffre) ){
             //ouverture d'un coffre
+            pos_s=newx+newy*100;
         }
     }
 

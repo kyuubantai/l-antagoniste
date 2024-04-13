@@ -17,6 +17,12 @@ tabCarte[3].tabCase[4][2].pnj=true;
 tabCarte[7].tabCase[6][4].pnj=true;
 tabCarte[7].tabCase[6][8].pnj=true;
 
+//_____________PNJ_PLACEMENT_________________________
+
+tabCarte[8].tabCase[4][1].coffre=true;
+tabCarte[9].tabCase[3][2].coffre=true;
+tabCarte[10].tabCase[5][10].coffre=true;
+
 //___________________________________________________
 
 
