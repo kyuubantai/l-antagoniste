@@ -19,12 +19,12 @@ class Deplacement {
 
         /**
          * @brief Effectue le déplacement dans le monde.
-         * @param action : l'action choisie par le joueur.
+         * @param action : l'action choisie par le joueur (touche du clavier)
         **/
         void deplace(char action);
 
         /**
-         * @brief Permet l'interaction avec les PNJs.
+         * @brief Permet l'interaction avec les PNJs, coffres et ennemis.
         **/
         void interaction();
 
