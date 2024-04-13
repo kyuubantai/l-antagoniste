@@ -12,3 +12,13 @@ qui pourront être utilisés pour se battre avec des ennemis.
 
 ## Utilisisation :
 éxecuter la commande 'make' puis './bin/mainAff' pour la version graphique sinon './bin/mainTxt' pour la version dans le terminal.
+Pour se déplacer : Format Z,Q,S,D (respectivement Avancer,Gauche,Reculer,Droite)
+Pour intéragir avec l'environnement (PNJs, Ennemis, Coffres) : "F"
+Pour quitter le jeu : Echap ou la croix de la fenêtre en haut à droite.
+
+# Organisation de l'archive
+bin -> executables
+data -> images des cartes, dialogues et héro
+doc -> documentation des modules, présentatio en PDF, diagramme de Gantt et diagramme des classes UML
+obj -> fichiers .o
+src -> fichiers .cpp et .h
