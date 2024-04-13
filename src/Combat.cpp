@@ -96,7 +96,8 @@ Ennemi Combat::selecteurEnnemi(int pos, vector<Ennemi> ennemis){
         etat = MENUBASE;
         break;
     default:
-        break;
+        return ennemis[0];
+            break;
     }
 }
 
@@ -104,49 +105,52 @@ string Combat::selecteurObj(int pos,Heros h){
     cout<<"sélecteur objet"<<endl;
     switch (pos)
     {
-    case 1:
-        return h.inventaire[0];
-        est_valide = true;
-        break;
-    case 2:
-        return h.inventaire[1];
-        est_valide = true;
-        break;
-    case 3:
-        return h.inventaire[2];
-        est_valide = true;
-        break;
-    case 4:
-        return h.inventaire[3];
-        est_valide = true;
-        break;
-    case 5:
-        return h.inventaire[4];
-        est_valide = true;
-        break;
-    case 6:
-        return h.inventaire[5];
-        est_valide = true;
-        break;
-    case 7:
-        return h.inventaire[6];
-        est_valide = true;
-        break;
-    case 8:
-        return h.inventaire[7];
-        est_valide = true;
-        break;
-    case 9:
-        return h.inventaire[8];
-        est_valide = true;
-        break;
-    case 10:
-        return h.inventaire[9];
-        est_valide = true;
-        break;
-    default:
-        etat = MENUBASE;
-        break;
+        case 0:
+            etat = MENUBASE;
+            break;
+        case 1:
+            return h.inventaire[0];
+            est_valide = true;
+            break;
+        case 2:
+            return h.inventaire[1];
+            est_valide = true;
+            break;
+        case 3:
+            return h.inventaire[2];
+            est_valide = true;
+            break;
+        case 4:
+            return h.inventaire[3];
+            est_valide = true;
+            break;
+        case 5:
+            return h.inventaire[4];
+            est_valide = true;
+            break;
+        case 6:
+            return h.inventaire[5];
+            est_valide = true;
+            break;
+        case 7:
+            return h.inventaire[6];
+            est_valide = true;
+            break;
+        case 8:
+            return h.inventaire[7];
+            est_valide = true;
+            break;
+        case 9:
+            return h.inventaire[8];
+            est_valide = true;
+            break;
+        case 10:
+            return h.inventaire[9];
+            est_valide = true;
+            break;
+        default:
+            return h.inventaire[0];
+            break;
     }
 }
 
@@ -219,6 +223,8 @@ void Combat::menu(Heros heros, int action){
                 cout<<"Garde"<<endl;
                 break;
             case OBJ:
+                cin>>choix;
+                 select_obj = selecteurObj(int pos,Heros h);
                 break;
             case RETREAT:
                 cout<<"Retraite"<<endl;
@@ -230,21 +236,23 @@ void Combat::menu(Heros heros, int action){
 }
 
 void Combat::combat(Heros heros, int action){
-    if(tour == MOI){ 
-        cout<<"Votre tour"<<endl;
-        menu(heros,action);}
-    else{
-        cout<<"Tour ennemi"<<endl;
-        for(long unsigned int y=0;y<ennemis.size();y++){
-            heros.stats.vie -= ennemis[y].stats.atkBase;
+    fin = false;
+    while(!fin){
+        if(tour == MOI){ 
+            cout<<"Votre tour"<<endl;
+            menu(heros,action);}
+        else{
+            cout<<"Tour ennemi"<<endl;
+            for(long unsigned int y=0;y<ennemis.size();y++){
+                heros.stats.vie -= ennemis[y].stats.atkBase;
+            }
+            cout<<"Il te reste "<<heros.stats.vie<<" PV"<<endl;
         }
-        cout<<"Il te reste "<<heros.stats.vie<<" PV"<<endl;
-    }
-    if(tour == MOI && est_valide) tour = ENNEMI;
-    else{ 
-        tour = MOI;
-        est_valide = false;
-    }
+        if(tour == MOI && est_valide) tour = ENNEMI;
+        else{ 
+            tour = MOI;
+            est_valide = false;
+        }
     if(tour == MOI && fin){
         cout<<"Fin du combat"<<endl;
     }
@@ -252,12 +260,14 @@ void Combat::combat(Heros heros, int action){
     for(long unsigned int i=0;i<ennemis.size();i++) {
         if(heros.stats.vie==0 || ennemis[i].stats.vie==0){
             fin=true;
+                }
             }
-        }
     }
-
-    /*if(heros.stats.vie<=0){cout<<"défaite"<<endl;}
+    if(heros.stats.vie<=0){cout<<"défaite"<<endl;}
     for(int j=0;j<ennemis.size();j++){
-    if(ennemis[j].stats.vie<=0){cout<<"victoire"<<endl;}
-    }*/
+        if(ennemis[j].stats.vie<=0){cout<<"victoire"<<endl;}
+    } 
+}
+
+    
 
