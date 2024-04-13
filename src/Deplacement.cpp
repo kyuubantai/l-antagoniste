@@ -77,30 +77,17 @@ void Deplacement::interaction() {
         }
     }
     for (int i=-1;i<2;i=i+2) {
-        if (monde.tabCarte[carteX].tabCase[pos_x+i][pos_y].ennemi) {
+        if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].ennemi) || (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].ennemi) ) {
             //Lancé combat avec ennemi (Personnage)
         }
     }
     
     for (int i=-1;i<2;i=i+2) {
-        if (monde.tabCarte[carteX].tabCase[pos_x+i][pos_y].coffre) {
-
+        if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].coffre) ||  (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].coffre) ){
+            //ouverture d'un coffre
         }
     }
 
-
-    for (int i=-1;i<2;i=i+2) {
-        if (monde.tabCarte[carteX].tabCase[pos_x][pos_y+i].ennemi) {
-
-        }
-    }
-
-
-    for (int i=-1;i<2;i=i+2) {
-        if (monde.tabCarte[carteX].tabCase[pos_x][pos_y+i].coffre) {
-
-        }
-    }
 }
 
 void Deplacement::deplace(char action) {
