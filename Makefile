@@ -3,15 +3,16 @@ OBJ_AFF = Monde.o Deplacement.o Jeu.o mainJeu.o GestionImage.o
 CFLAGS = -Wall -ggdb
 LIBS = -lSDL2 -lSDL2_image
 
-all: mainTest aff
+all: mainTxt aff testCombat
 
-mainTest: $(OBJ_FILES)
+mainTxt: $(OBJ_FILES)
 	g++ obj/winTxt.o obj/Monde.o obj/Deplacement.o obj/JeuTxt.o obj/mainTxt.o -o bin/mainTxt
 
 aff: $(OBJ_AFF)
 	g++ obj/Monde.o obj/Deplacement.o obj/GestionImage.o obj/Jeu.o obj/mainJeu.o -o bin/mainAff $(LIBS)
 
-
+testCombat: $(OBJ_FILES)
+	g++ obj/mainTest.o obj/Competence.o obj/Ennemi.o obj/Combat.o -o bin/testCombat
 
 Carte.o: src/Carte.cpp src/Case.h
 	g++ $(CFLAGS) -c src/Carte.cpp -o obj/Carte.o
