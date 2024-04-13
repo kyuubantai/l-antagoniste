@@ -11,6 +11,8 @@ mainTest: $(OBJ_FILES)
 aff: $(OBJ_AFF)
 	g++ obj/Monde.o obj/Deplacement.o obj/GestionImage.o obj/Jeu.o obj/mainJeu.o -o bin/mainAff $(LIBS)
 
+
+
 Carte.o: src/Carte.cpp src/Case.h
 	g++ $(CFLAGS) -c src/Carte.cpp -o obj/Carte.o
 
@@ -19,6 +21,18 @@ Monde.o: src/Monde.cpp src/Carte.h
 
 Deplacement.o: src/Deplacement.cpp src/Monde.h
 	g++ $(CFLAGS) -c src/Deplacement.cpp -o obj/Deplacement.o
+
+Competence.o: src/Competence.cpp src/Competence.h
+	g++ $(CFLAGS) -c src/Competence.cpp -o obj/Competence.o
+
+Ennemi.o: src/Ennemi.cpp src/Personnage.h
+	g++ $(CFLAGS) -c src/Ennemi.cpp -o obj/Ennemi.o
+
+Combat.o: src/Combat.cpp src/Heros.h src/Ennemi.h src/Competence.h
+	g++ $(CFLAGS) -c src/Combat.cpp -o obj/Combat.o
+
+mainTestCombat.o: src/mainTestCombat.cpp src/Heros.h src/Combat.h
+	g++ $(CFLAGS) -c src/mainTestCombat.cpp -o obj/mainTestCombat.o
 
 JeuTxt.o: src/JeuTxt.cpp src/Deplacement.h src/winTxt.h
 	g++ $(CFLAGS) -c src/JeuTxt.cpp -o obj/JeuTxt.o
@@ -37,6 +51,7 @@ Jeu.o : src/Jeu.cpp src/Jeu.h
 
 mainJeu.o : src/mainJeu.cpp obj/Jeu.o
 	g++ $(CFLAGS) -c src/mainJeu.cpp -o obj/mainJeu.o
+
 
 
 clean:
