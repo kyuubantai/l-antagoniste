@@ -7,8 +7,8 @@ class WinTXT
 private:
 
     int dimx;       //!< \brief largeur
-    int dimy;       //!< \brief heuteur
-    char* win;      //!< \brief stocke le contenu de la fenêtre dans un tableau 1D mais on y accede en 2D
+    int dimy;       //!< \brief hauteur
+    char* win;      //!< \brief stocke le contenu de la fenêtre dans un tableau 1D mais on y accède en 2D
 
 public:
 
