@@ -55,7 +55,7 @@ void Jeu::afficher_perso(char& sprite_perso){
 void Jeu::afficher_dial(){
     int num_dial=d.getDialogue();
     dialogue.draw(m_renderer,proportion,78*proportion,190*proportion,30*proportion);
-    dialogue.creerDial(m_renderer,num_pnj,num_dial);
+    dialogue.loadDial(m_renderer,num_pnj,num_dial);
         std::cout<<d.getDialogue()<<endl;
         std::cout<<d.getPnj()<<endl;
     if (d.getPnj()==51 && d.getDialogue()==3) { // remettre à 0 lorsqu'il y n'y a plus de dialogue
