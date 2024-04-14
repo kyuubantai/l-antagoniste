@@ -67,7 +67,6 @@ class GestionImage {
         * @param num_pnj le numéro identifiant le pnj.
         * @param num_dial le numéro du dialogue en question.
         **/
-        void creerDial(SDL_Renderer * renderer, int num_pnj,int num_dial);
 
         void loadDial(SDL_Renderer *renderer,int num_pnj,int num_dial);
 
