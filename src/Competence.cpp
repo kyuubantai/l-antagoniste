@@ -5,7 +5,7 @@ using namespace std;
 
 int Competence::atkMono(int &vie_ennemi,int& energie,const int atk){
     vie_ennemi -= atk*1.5;
-    energie-=20;
+    energie-=30;
     return vie_ennemi;
 }
 
