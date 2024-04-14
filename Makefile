@@ -1,6 +1,6 @@
 OBJ_FILES = Monde.o Deplacement.o winTxt.o JeuTxt.o mainTxt.o
 OBJ_AFF = Monde.o Deplacement.o Jeu.o mainJeu.o GestionImage.o
-OBJ_VS = mainTest.o Competence.o Ennemi.o Combat.o
+OBJ_VS = mainTestCombat.o Competence.o Ennemi.o Heros.o Combat.o
 CFLAGS = -Wall -ggdb
 LIBS = -lSDL2 -lSDL2_image
 
@@ -13,7 +13,7 @@ aff: $(OBJ_AFF)
 	g++ obj/Monde.o obj/Deplacement.o obj/GestionImage.o obj/Jeu.o obj/mainJeu.o -o bin/mainAff $(LIBS)
 
 testCombat: $(OBJ_VS)
-	g++ obj/mainTest.o obj/Competence.o obj/Ennemi.o obj/Combat.o -o bin/testCombat
+	g++ obj/mainTestCombat.o obj/Competence.o obj/Ennemi.o obj/Heros.o obj/Combat.o -o bin/testCombat
 
 Carte.o: src/Carte.cpp src/Case.h
 	g++ $(CFLAGS) -c src/Carte.cpp -o obj/Carte.o
@@ -29,6 +29,9 @@ Competence.o: src/Competence.cpp src/Competence.h
 
 Ennemi.o: src/Ennemi.cpp src/Personnage.h
 	g++ $(CFLAGS) -c src/Ennemi.cpp -o obj/Ennemi.o
+
+Heros.o: src/Heros.cpp src/Heros.h
+	g++ $(CFLAGS) -c src/Heros.cpp -o obj/Heros.o
 
 Combat.o: src/Combat.cpp src/Heros.h src/Ennemi.h src/Competence.h
 	g++ $(CFLAGS) -c src/Combat.cpp -o obj/Combat.o
