@@ -41,7 +41,7 @@ Etat Combat::saisirchoix(int choix){
     case 4:
         e = OBJ;
         break;
-    case 0://Retraite
+    case 5://Retraite
         e = RETREAT;
         break;
     
