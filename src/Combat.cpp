@@ -198,7 +198,7 @@ void Combat::selecteurComp(int action,vector<Ennemi>&ennemis,Heros &h){
             }
     
     case MULTI:
-        if(h.stats.energie>60){
+        if(h.stats.energie>90){
             cout<<"Multicible"<<endl;
             for(long unsigned int i=0;i<ennemis.size();i++){
                 comp.atkMulti(ennemis[i].stats.vie,h.stats.energie,h.stats.atkBase);
