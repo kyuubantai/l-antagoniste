@@ -16,7 +16,7 @@ class Competence {
          * @param atk attaque de base du heros
          * @return la vie de l'ennemi modifiée
          **/
-        int atkMono(int vie_ennemi,int& energie,const int atk);
+        int atkMono(int &vie_ennemi,int& energie,const int atk);
 
         /**
          * @brief Constructeur de la classe : initialise les statistiques des ennemis.
@@ -25,7 +25,7 @@ class Competence {
          * @param atk attaque de base du heros
          * @return la vie de l'ennemi modifiée
          **/
-        int atkMulti(int vie_ennemi,int& energie,const int atk);
+        int atkMulti(int &vie_ennemi,int& energie,const int atk);
 
         /**
          * @brief Constructeur de la classe : initialise les statistiques des ennemis.
@@ -34,7 +34,7 @@ class Competence {
          * @param vieMax_perso vie maximale du heros
          * @return la vie du héros modifiée
          **/
-        int soin(int vie_perso,int& energie,const int vieMax_perso);
+        int soin(int &vie_perso,int& energie,const int vieMax_perso);
 
 
 };
