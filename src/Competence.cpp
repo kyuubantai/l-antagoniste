@@ -17,6 +17,7 @@ int Competence::atkMulti(int &vie_ennemi,int& energie,const int atk){
 
 int Competence::soin(int &vie_perso, int &energie, const int vieMax_perso){
     vie_perso += 50;
+    energie -= 50;
     if (vie_perso>vieMax_perso) vie_perso=vieMax_perso;
     return vie_perso;
 }
