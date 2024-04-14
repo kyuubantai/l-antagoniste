@@ -20,6 +20,8 @@ enum EtatComp{MENUCOMP,MONO,MULTI,HEAL};
 class Combat {
     private:
         Ennemi en;
+        Etat etat;
+        EtatComp et;
         vector<Ennemi> ennemis;
 
         /**
@@ -35,7 +37,7 @@ class Combat {
          * @param ennemis un tableau dynamique (vector) d'Ennemi.
          * @return l'Ennemi choisi.
          **/
-        Ennemi selecteurEnnemi(int pos, vector<Ennemi> ennemis);
+        void selecteurEnnemi(int pos, vector<Ennemi> ennemis);
 
         /**
          * @brief Sous-menu des compétences.
@@ -68,8 +70,6 @@ class Combat {
         string selecteurObj(int pos,Heros h);
 
     public:
-        Etat etat;
-        EtatComp et;
         bool fin;
         Tour tour;
 
