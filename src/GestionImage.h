@@ -69,6 +69,8 @@ class GestionImage {
         **/
         void creerDial(SDL_Renderer * renderer, int num_pnj,int num_dial);
 
+        void loadDial(SDL_Renderer *renderer,int num_pnj,int num_dial);
+
 
         //SDL_Texture * getTexture() const;
 };
