@@ -286,6 +286,7 @@ void Combat::menu(Heros &heros, int action){
 }
 
 void Combat::combat(Heros &heros, int action){
+    int total;
     cout<<"Il y a "<<ennemis.size()<<" ennemis"<<endl;
     for(long unsigned int j=0;j<ennemis.size();j++){
             cout<<"Ennemi "<<j<<" : "<<ennemis[j].stats.vie<<endl;
@@ -309,10 +310,11 @@ void Combat::combat(Heros &heros, int action){
         tour = MOI;
         est_valide = false;
     }
-    if(heros.stats.vie<=0)fin=true;
+
 
     for(long unsigned int i=0;i<ennemis.size();i++) {
-        if(ennemis[i].stats.vie<=0)fin=true;
+        total = total+ennemis[i].stats.vie;
+        if(heros.stats.vie<=0 || total<=0)fin=true;
     }
     if(fin && heros.stats.vie>0){ //cas où on fait une retraite
             cout<<"Fin du combat"<<endl;
