@@ -80,6 +80,12 @@ class Combat {
         Combat();
 
         /**
+         * @brief Constructeur de la classe par copie : initialise un ennemi spécial
+         **/
+
+        Combat(Ennemi ennemi);
+
+        /**
          * @brief Destructeur de la classe.
          **/
         ~Combat();
