@@ -18,7 +18,10 @@ Combat::Combat(){
     for(int i=0; i<((rand()%3)+1);i++){
         ennemis.push_back(en);
     }
-    cout<<"Il y a "<<ennemis.size()<<" ennemis"<<endl;
+}
+
+Combat::Combat(Ennemi ennemi){
+    ennemis.push_back(ennemi);
 }
 
 Combat::~Combat(){
@@ -81,7 +84,7 @@ void Combat::selecteurEnnemi(int pos, vector<Ennemi> &ennemis, Heros &h){
     {
     case 1:
         cout<<"1 touché"<<endl;
-        if(et == MONO){
+        if(etat == COMP){
             comp.atkMono(ennemis[0].stats.vie,h.stats.energie,h.stats.atkBase);
             cout<<"L'ennemi 1 a "<<ennemis[0].stats.vie<<" pv"<<endl;
         }
@@ -92,28 +95,40 @@ void Combat::selecteurEnnemi(int pos, vector<Ennemi> &ennemis, Heros &h){
         est_valide = true;
         break;
     case 2:
-        cout<<"2 touché"<<endl;
-        if(etat == COMP){
-            comp.atkMono(ennemis[1].stats.vie,h.stats.energie,h.stats.atkBase);
-            cout<<"L'ennemi 2 a "<<ennemis[1].stats.vie<<" pv"<<endl;
+        if(pos>ennemis.size()){
+            cout<<"Choississez un autre ennemi";
         }
         else{
-        ennemis[1].stats.vie -=10;
-        cout<<"L'ennemi 2 a "<<ennemis[1].stats.vie<<" pv"<<endl;
+            cout<<"2 touché"<<endl;
+            if(etat == COMP){
+                comp.atkMono(ennemis[1].stats.vie,h.stats.energie,h.stats.atkBase);
+                cout<<"L'ennemi 2 a "<<ennemis[1].stats.vie<<" pv"<<endl;
+            }
+            else{
+            ennemis[1].stats.vie -=10;
+            cout<<"L'ennemi 2 a "<<ennemis[1].stats.vie<<" pv"<<endl;
+            }
+            est_valide = true;
+            break;
         }
-        est_valide = true;
         break;
     case 3:
-        cout<<"3 touché"<<endl;
-        if(etat == COMP){
-            comp.atkMono(ennemis[2].stats.vie,h.stats.energie,h.stats.atkBase);
-            cout<<"L'ennemi 3 a "<<ennemis[2].stats.vie<<" pv"<<endl;
+       if(pos>ennemis.size()){
+            cout<<"Choississez un autre ennemi";
         }
         else{
-        ennemis[2].stats.vie -=10;
-        cout<<"L'ennemi 3 a "<<ennemis[2].stats.vie<<" pv"<<endl;
+            cout<<"2 touché"<<endl;
+            if(etat == COMP){
+                comp.atkMono(ennemis[2].stats.vie,h.stats.energie,h.stats.atkBase);
+                cout<<"L'ennemi 3 a "<<ennemis[2].stats.vie<<" pv"<<endl;
+            }
+            else{
+            ennemis[2].stats.vie -=10;
+            cout<<"L'ennemi 3 a "<<ennemis[2].stats.vie<<" pv"<<endl;
+            }
+            est_valide = true;
+            break;
         }
-        est_valide = true;
         break;
     case 0:
         etat = MENUBASE;
@@ -198,7 +213,7 @@ void Combat::selecteurComp(int action,vector<Ennemi>&ennemis,Heros &h){
             }
     
     case MULTI:
-        if(h.stats.energie>90){
+        if(h.stats.energie>60){
             cout<<"Multicible"<<endl;
             for(long unsigned int i=0;i<ennemis.size();i++){
                 comp.atkMulti(ennemis[i].stats.vie,h.stats.energie,h.stats.atkBase);
@@ -271,6 +286,10 @@ void Combat::menu(Heros &heros, int action){
 }
 
 void Combat::combat(Heros &heros, int action){
+    cout<<"Il y a "<<ennemis.size()<<" ennemis"<<endl;
+    for(long unsigned int j=0;j<ennemis.size();j++){
+            cout<<"Ennemi "<<j<<" : "<<ennemis[j].stats.vie<<endl;
+    }
     if(tour == MOI){ 
         cout<<"Votre tour"<<endl;
         menu(heros,action);
@@ -290,16 +309,20 @@ void Combat::combat(Heros &heros, int action){
         tour = MOI;
         est_valide = false;
     }
+    if(heros.stats.vie<=0)fin=true;
+
     for(long unsigned int i=0;i<ennemis.size();i++) {
-        if(heros.stats.vie==0 || ennemis[i].stats.vie==0)fin=true;
+        if(ennemis[i].stats.vie<=0)fin=true;
     }
     if(fin && heros.stats.vie>0){ //cas où on fait une retraite
             cout<<"Fin du combat"<<endl;
             exit(0);
     }
+
+    //peut-être inutile à mettre ici
     if(fin && heros.stats.vie<=0){// cas où l'héros perd
         cout<<"défaite"<<endl;
-        exit(0);
+        //exit(0);
     }
     else{// cas où l'héros gagne
         for(long unsigned int j=0;j<ennemis.size();j++){
