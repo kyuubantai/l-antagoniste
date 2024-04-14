@@ -4,7 +4,7 @@ OBJ_VS = mainTestCombat.o Competence.o Ennemi.o Heros.o Combat.o
 CFLAGS = -Wall -ggdb
 LIBS = -lSDL2 -lSDL2_image
 
-all: mainTxt aff testCombat
+all: mainTxt aff testCombat doc
 
 mainTxt: $(OBJ_FILES)
 	g++ obj/winTxt.o obj/Monde.o obj/Deplacement.o obj/JeuTxt.o obj/mainTxt.o -o bin/mainTxt
@@ -14,6 +14,9 @@ aff: $(OBJ_AFF)
 
 testCombat: $(OBJ_VS)
 	g++ obj/mainTestCombat.o obj/Competence.o obj/Ennemi.o obj/Heros.o obj/Combat.o -o bin/testCombat
+
+doc : doc/doxyfile
+	doxygen doc/doxyfile
 
 Carte.o: src/Carte.cpp src/Case.h
 	g++ $(CFLAGS) -c src/Carte.cpp -o obj/Carte.o
