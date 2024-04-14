@@ -12,7 +12,7 @@ int main(){
     Heros h;
     h.stats.atkBase = 20;
     h.stats.def = 100;
-    h.stats.energie = 250;
+    h.stats.energie = 999;
     h.stats.vieMax=999;
     h.stats.vie = 999;
     int action;
@@ -21,5 +21,6 @@ int main(){
         cout<<"Choississez votre action : "<<endl;
         cin>>action;
     }while(h.stats.vie>0);
+    //if(h.stats.vie<=0) cout<<"défaite";
     return 0;
 }
