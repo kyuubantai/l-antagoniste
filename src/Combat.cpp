@@ -12,9 +12,9 @@ bool est_valide = false;
 bool garde = false;
 
 Combat::Combat(){
-    srand(time(NULL));
     fin = false;
     tour = MOI;
+    srand(time(NULL));
     for(int i=0; i<((rand()%3)+1);i++){
         ennemis.push_back(en);
     }
@@ -75,22 +75,44 @@ EtatComp Combat::saisirComp(int choix){
     }
     return Ec;
 }
-void Combat::selecteurEnnemi(int pos, vector<Ennemi> ennemis){
+void Combat::selecteurEnnemi(int pos, vector<Ennemi> &ennemis, Heros &h){
+    Competence comp;
     switch (pos)
     {
     case 1:
         cout<<"1 touché"<<endl;
+        if(et == MONO){
+            comp.atkMono(ennemis[0].stats.vie,h.stats.energie,h.stats.atkBase);
+            cout<<"L'ennemi 1 a "<<ennemis[0].stats.vie<<" pv"<<endl;
+        }
+        else{
         ennemis[0].stats.vie -=10;
+        cout<<"L'ennemi 1 a "<<ennemis[0].stats.vie<<" pv"<<endl;
+        }
         est_valide = true;
         break;
     case 2:
         cout<<"2 touché"<<endl;
+        if(etat == COMP){
+            comp.atkMono(ennemis[1].stats.vie,h.stats.energie,h.stats.atkBase);
+            cout<<"L'ennemi 2 a "<<ennemis[1].stats.vie<<" pv"<<endl;
+        }
+        else{
         ennemis[1].stats.vie -=10;
+        cout<<"L'ennemi 2 a "<<ennemis[1].stats.vie<<" pv"<<endl;
+        }
         est_valide = true;
         break;
     case 3:
         cout<<"3 touché"<<endl;
+        if(etat == COMP){
+            comp.atkMono(ennemis[2].stats.vie,h.stats.energie,h.stats.atkBase);
+            cout<<"L'ennemi 3 a "<<ennemis[2].stats.vie<<" pv"<<endl;
+        }
+        else{
         ennemis[2].stats.vie -=10;
+        cout<<"L'ennemi 3 a "<<ennemis[2].stats.vie<<" pv"<<endl;
+        }
         est_valide = true;
         break;
     case 0:
@@ -101,7 +123,7 @@ void Combat::selecteurEnnemi(int pos, vector<Ennemi> ennemis){
     }
 }
 
-string Combat::selecteurObj(int pos,Heros h){
+string Combat::selecteurObj(int pos,Heros &h){
     cout<<"sélecteur objet"<<endl;
     switch (pos)
     {
@@ -154,41 +176,56 @@ string Combat::selecteurObj(int pos,Heros h){
     }
 }
 
-void Combat::selecteurComp(int action,vector<Ennemi>ennemis,Heros h){
+void Combat::selecteurComp(int action,vector<Ennemi>&ennemis,Heros &h){
     cout<<"On est dans selecteurComp"<<endl;
     Competence comp;
-    Ennemi select;
     EtatComp et = MENUCOMP;
     int choix2;
     et = saisirComp(action);
     switch(et){   
         case MONO:
-            cout<<"Monocible: sélectionne ennemi"<<endl;
-            cin>>choix2;
-            selecteurEnnemi(choix2,ennemis);
-            comp.atkMono(select.stats.vie,h.stats.energie,h.stats.atkBase);
-            cout<<"L'ennemi a "<<select.stats.vie<<" PV"<<endl;
+            if(h.stats.energie>30){
+                cout<<"Monocible: sélectionne ennemi"<<endl;
+                cin>>choix2;
+                selecteurEnnemi(choix2,ennemis,h);
+                cout<<"Il vous reste "<<h.stats.energie<<" énergie"<<endl;
+                est_valide = true;
+                break;
+            }
+            else{
+                cout<<"Vous n'avez pas assez d'énergie"<<endl;
+                break;
+            }
+    
+    case MULTI:
+        if(h.stats.energie>60){
+            cout<<"Multicible"<<endl;
+            for(long unsigned int i=0;i<ennemis.size();i++){
+                comp.atkMulti(ennemis[i].stats.vie,h.stats.energie,h.stats.atkBase);
+                cout<<"L'ennemi a "<<ennemis[i].stats.vie<<" PV"<<endl;
+            }
             cout<<"Il vous reste "<<h.stats.energie<<" énergie"<<endl;
             est_valide = true;
             break;
-    
-    case MULTI:
-        cout<<"Multicible"<<endl;
-        for(long unsigned int i=0;i<ennemis.size();i++){
-            comp.atkMulti(ennemis[i].stats.vie,h.stats.energie,h.stats.atkBase);
-            cout<<"L'ennemi a "<<ennemis[i].stats.vie<<" PV"<<endl;
         }
-        cout<<"Il vous reste "<<h.stats.energie<<" énergie"<<endl;
-        est_valide = true;
-        break;
+        else{
+            cout<<"Vous n'avez pas assez d'énergie"<<endl;
+            break;
+        }
     
     case HEAL:
-        cout<<"heal"<<endl;
-        comp.soin(h.stats.vie,h.stats.energie,h.stats.vieMax);
-        cout<<"Vous avez "<<h.stats.vie<<" PV"<<endl;
-        cout<<"Il vous reste "<<h.stats.energie<<" énergie"<<endl;
-        est_valide = true;
-        break;
+        if(h.stats.energie>50){
+            cout<<"heal"<<endl;
+            comp.soin(h.stats.vie,h.stats.energie,h.stats.vieMax);
+            cout<<"Vous avez "<<h.stats.vie<<" PV"<<endl;
+            cout<<"Il vous reste "<<h.stats.energie<<" énergie"<<endl;
+            est_valide = true;
+            break;
+        }
+        else{
+            cout<<"Vous n'avez pas assez d'énergie"<<endl;
+            break;
+        }
 
     default:
         etat = MENUBASE;
@@ -197,10 +234,9 @@ void Combat::selecteurComp(int action,vector<Ennemi>ennemis,Heros h){
 }
 
 
-void Combat::menu(Heros heros, int action){
+void Combat::menu(Heros &heros, int action){
     cout<<"MENU PRINCIPAL"<<endl;
     int choix;
-    Ennemi select_ennemi;
     string select_obj;
     etat=MENUBASE;
     etat = saisirchoix(action);
@@ -208,8 +244,7 @@ void Combat::menu(Heros heros, int action){
             case SELECT:
                 cout<<"sélectionne ennemi"<<endl;
                 cin>>choix;
-                selecteurEnnemi(choix,ennemis);
-                cout<<"L'ennemi a "<<select_ennemi.stats.vie<<" pv"<<endl;
+                selecteurEnnemi(choix,ennemis,heros);
                 break;
             case COMP:
                 cout<<"Sélectionne la comp"<<endl;
@@ -235,12 +270,11 @@ void Combat::menu(Heros heros, int action){
         }
 }
 
-void Combat::combat(Heros heros, int action){
-    fin = false;
+void Combat::combat(Heros &heros, int action){
     if(tour == MOI){ 
         cout<<"Votre tour"<<endl;
         menu(heros,action);
-        cout<<est_valide<<endl;
+        cout<<fin<<endl;
         }
     else{
         cout<<"Tour ennemi"<<endl;
@@ -250,28 +284,32 @@ void Combat::combat(Heros heros, int action){
         }
         cout<<"Il te reste "<<heros.stats.vie<<" PV"<<endl;
     }
+    
     if(tour == MOI && est_valide) tour = ENNEMI;
     else{ 
         tour = MOI;
         est_valide = false;
-        }
-    
-        if(fin){
-            cout<<"Fin du combat"<<endl;
-        }
-    
-
+    }
     for(long unsigned int i=0;i<ennemis.size();i++) {
-        if(heros.stats.vie==0 || ennemis[i].stats.vie==0){
-            fin=true;
-                }
+        if(heros.stats.vie==0 || ennemis[i].stats.vie==0)fin=true;
+    }
+    if(fin && heros.stats.vie>0){ //cas où on fait une retraite
+            cout<<"Fin du combat"<<endl;
+            exit(0);
+    }
+    if(fin && heros.stats.vie<=0){// cas où l'héros perd
+        cout<<"défaite"<<endl;
+        exit(0);
+    }
+    else{// cas où l'héros gagne
+        for(long unsigned int j=0;j<ennemis.size();j++){
+            if(fin && ennemis[j].stats.vie<=0){
+            cout<<"victoire"<<endl;
+                exit(0);
             }
-    
-    if(heros.stats.vie<=0){cout<<"défaite"<<endl;}
-    for(long unsigned int j=0;j<ennemis.size();j++){
-        if(ennemis[j].stats.vie<=0){cout<<"victoire"<<endl;}
-    } 
-}
+        }        
+    }   
+}   
 
 
     
