@@ -52,7 +52,7 @@ bin -> Les fichiers exécutables. <br>
 data -> Les images des cartes, des dialogues et du héros. <br>
 doc -> La documentation des modules, la présentation en PDF, le diagramme de Gantt et le diagramme des classes UML. <br>
 obj -> Les fichiers objets. <br>
-src -> Les fichiers .cpp et .h contenant le code du projet.
+src -> Les fichiers .cpp et .h contenant les classes du projet et leur code.
 
 ##  Documentation du code
 
