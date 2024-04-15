@@ -10,7 +10,7 @@ Vous incarnez un personnage qui se surnomme "L'Antagoniste", comme son nom l'ind
 Au cours de votre aventure vous allez rencontrez des PNJs, avec qui l'ont peut intéragir, des coffres pour y trouver des objets
 qui pourront être utilisés pour se battre avec des ennemis. 
 
-## Utilisisation :
+## Utilisation :
 éxecuter la commande 'make' puis './bin/mainAff' pour la version graphique sinon './bin/mainTxt' pour la version dans le terminal.
 Pour se déplacer : Format Z,Q,S,D (respectivement Avancer,Gauche,Reculer,Droite)
 Pour intéragir avec l'environnement (PNJs, Ennemis, Coffres) : "F"
