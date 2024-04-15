@@ -18,7 +18,7 @@ Pour quitter le jeu : Echap ou la croix de la fenêtre en haut à droite.
 
 # Organisation de l'archive
 bin -> executables <br>
-data -> images des cartes, dialogues et héro
-doc -> documentation des modules, présentatio en PDF, diagramme de Gantt et diagramme des classes UML
-obj -> fichiers .o
+data -> images des cartes, dialogues et héros <br>
+doc -> documentation des modules, présentatio en PDF, diagramme de Gantt et diagramme des classes UML <br>
+obj -> fichiers .o <br>
 src -> fichiers .cpp et .h
