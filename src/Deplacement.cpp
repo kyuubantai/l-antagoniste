@@ -81,7 +81,7 @@ void Deplacement::interaction() {
         if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].ennemi) || (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].ennemi) ) {
             //Lancé combat avec ennemi (Personnage)
             pos_s=newx+newy*100; 
-            switch(CarteX) {
+            switch(carteX) {
                 case 8 : if (pos_s==104) {
                     
                 }

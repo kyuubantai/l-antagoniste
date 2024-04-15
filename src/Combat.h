@@ -26,10 +26,9 @@ class Combat {
 
         /**
          * @brief Menu principal des options de combat.
-         * @param heros les statistiques du Heros.
          * @param action l'action choisie par le joueur.
          **/
-        void menu(Heros &heros,int action);
+        void menu(int action);
 
         /**
          * @brief Permet de sélectionner un ennemi parmi les multiples possibilités.
@@ -38,15 +37,14 @@ class Combat {
          * @param h statistiques du héros
          * @return l'Ennemi choisi.
          **/
-        void selecteurEnnemi(int pos, vector<Ennemi> &ennemis,Heros &h);
+        void selecteurEnnemi(long unsigned int pos, vector<Ennemi> &ennemis);
 
         /**
          * @brief Sous-menu des compétences.
          * @param action l'action choisie par le joueur.
          * @param ennemis un tableau dynamique (vector) d'Ennemi.
-         * @param h les statistiques du Heros.
          **/
-        void selecteurComp(int action,vector<Ennemi>&ennemis,Heros &h);
+        void selecteurComp(int action,vector<Ennemi>&ennemis);
 
         /**
          * @brief Permet d'effectuer un choix.
@@ -65,14 +63,14 @@ class Combat {
         /**
          * @brief Récupère un objet dans l'inventaire à partir du choix du joueur.
          * @param pos la position de l'objet dans l'inventaire.
-         * @param s les statistiques du Heros.
          * @return une chaine de caractères correspondant à l'objet choisi.
          **/
-        string selecteurObj(int pos,Heros &h);
+        int selecteurObj(int pos);
 
     public:
         Tour tour;
         bool fin;
+        Heros heros;
 
         /**
          * @brief Constructeur de la classe : initialise les combats.
@@ -92,10 +90,19 @@ class Combat {
 
         /**
          * @brief Destructeur de la classe.
-         * @param heros statistiques du Heros.
          * @param action action choisie par le joueur.
          **/
-        void combat(Heros &heros,int action);
+        void combat(int action);
+        /**
+         * @brief initialise a 0 les cases de l'inventaire
+        **/
+        void initInventory();
+
+        /**
+         * @brief Modifie le numéro du dialogue.
+         * @param dial : son nouveau numéro.
+        **/
+        void setInventory(const int& objet);
 
 };
 

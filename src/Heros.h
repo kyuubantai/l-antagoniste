@@ -15,7 +15,7 @@ using namespace std;
 class Heros {
     public:
 	    Personnage stats;
-        string inventaire[10];
+        int inventaire[10];
 
         /**
          * @brief Constructeur de la classe : initialise les statistiques du héros.

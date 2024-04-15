@@ -2,6 +2,7 @@
 #define __DEPLACEMENT__H
 
 #include "Monde.h"
+#include "Combat.h"
 
 
 
@@ -55,6 +56,7 @@ class Deplacement {
          * @param dial : son nouveau numéro.
         **/
         void setDialogue(const int& dial);
+        
 };
 
 inline Monde Deplacement::getMonde () const { return monde; }

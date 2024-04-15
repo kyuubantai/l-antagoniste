@@ -17,7 +17,7 @@ int main(){
     h.stats.vie = 999;
     int action;
     do{
-        c.combat(h,action);
+        c.combat(action);
         cout<<"Choississez votre action : "<<endl;
         cin>>action;
     }while(h.stats.vie>0);
