@@ -17,7 +17,7 @@ Pour intéragir avec l'environnement (PNJs, Ennemis, Coffres) : "F"
 Pour quitter le jeu : Echap ou la croix de la fenêtre en haut à droite.
 
 # Organisation de l'archive
-bin -> executables '\n'
+bin -> executables <br>
 data -> images des cartes, dialogues et héro
 doc -> documentation des modules, présentatio en PDF, diagramme de Gantt et diagramme des classes UML
 obj -> fichiers .o
