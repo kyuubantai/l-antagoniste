@@ -60,10 +60,7 @@ Jeu.o : src/Jeu.cpp src/Jeu.h
 mainJeu.o : src/mainJeu.cpp obj/Jeu.o
 	g++ $(CFLAGS) -c src/mainJeu.cpp -o obj/mainJeu.o
 
-doc: doc/doxyfile
-	doxygen doc/doxyfile
-
-
+	
 
 clean:
-	rm $(OBJ_FILES) $(OBJ_AFF)
+	rm bin/* obj/*.o -r doc/html -r doc/latex 
