@@ -15,7 +15,6 @@ aff: $(OBJ_AFF)
 testCombat: $(OBJ_VS)
 	g++ obj/mainTestCombat.o obj/Competence.o obj/Ennemi.o obj/Heros.o obj/Combat.o -o bin/testCombat
 
-
 Carte.o: src/Carte.cpp src/Case.h
 	g++ $(CFLAGS) -c src/Carte.cpp -o obj/Carte.o
 
@@ -57,6 +56,9 @@ Jeu.o : src/Jeu.cpp src/Jeu.h
 
 mainJeu.o : src/mainJeu.cpp obj/Jeu.o
 	g++ $(CFLAGS) -c src/mainJeu.cpp -o obj/mainJeu.o
+
+doc: doc/doxyfile
+	doxygen doc/doxyfile
 
 
 
