@@ -78,20 +78,20 @@ void Deplacement::interaction() {
         }
     }
     for (int i=-1;i<2;i=i+2) {
-        if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].ennemi) || (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].ennemi) ) {
-            //Lancé combat avec ennemi (Personnage)
+        if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].coffre) || (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].coffre) ) {
+            //ouverture d'un coffre
             pos_s=newx+newy*100; 
             switch(carteX) {
                 case 8 : if (pos_s==104) {
-                    
+                    std::cout<<"Vous avez obtenu une Potion";
                 }
                 break;
                 case 9 : if (pos_s==203) {
-                    
+                    std::cout<<"Vous avez obtenu une Potion";
                 }
                 break;
-                case 11 : if (pos_s==1005) {
-
+                case 11 : if (pos_s==1005) {    
+                    std::cout<<"Vous avez obtenu une Potion";
                 }
                 break;
             }
@@ -99,8 +99,8 @@ void Deplacement::interaction() {
     }
     
     for (int i=-1;i<2;i=i+2) {
-        if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].coffre) ||  (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].coffre) ){
-            //ouverture d'un coffre
+        if ( (monde.tabCarte[carteX].tabCase[newx=pos_x+i][newy=pos_y].ennemi) ||  (monde.tabCarte[carteX].tabCase[newx=pos_x][newy=pos_y+i].ennemi) ){
+            //Lancé combat avec ennemi (Personnage)
             pos_s=newx+newy*100;
         }
     }
