@@ -90,7 +90,7 @@ void Combat::selecteurEnnemi(long unsigned int pos, vector<Ennemi> &ennemis){
             cout<<"L'ennemi 1 a "<<ennemis[0].stats.vie<<" pv"<<endl;
         }
         else{
-        ennemis[0].stats.vie -=10;
+        ennemis[0].stats.vie -=30;
         cout<<"L'ennemi 1 a "<<ennemis[0].stats.vie<<" pv"<<endl;
         }
         est_valide = true;
@@ -122,7 +122,7 @@ void Combat::selecteurEnnemi(long unsigned int pos, vector<Ennemi> &ennemis){
                 cout<<"L'ennemi 3 a "<<ennemis[2].stats.vie<<" pv"<<endl;
             }
             else{
-            ennemis[2].stats.vie -=10;
+            ennemis[2].stats.vie -=30;
             cout<<"L'ennemi 3 a "<<ennemis[2].stats.vie<<" pv"<<endl;
             }
             est_valide = true;
