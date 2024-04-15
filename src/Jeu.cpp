@@ -84,7 +84,6 @@ void Jeu::afficher_dial(){
         d.setDialogue(1000);    
         d.setPnj(1000);
     }
-    
     num_pnj=d.getPnj();
 }
 
