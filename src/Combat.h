@@ -23,6 +23,8 @@ class Combat {
         Etat etat;
         EtatComp et;
         vector<Ennemi> ennemis;
+        bool est_valide;
+        bool garde;
 
         /**
          * @brief Menu principal des options de combat.
@@ -34,6 +36,7 @@ class Combat {
          * @brief Permet de sélectionner un ennemi parmi les multiples possibilités.
          * @param pos la position de l'Ennmi.
          * @param ennemis un tableau dynamique (vector) d'Ennemi.
+         * @param h statistiques du héros
          * @return l'Ennemi choisi.
          **/
         void selecteurEnnemi(long unsigned int pos, vector<Ennemi> &ennemis);
