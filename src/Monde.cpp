@@ -21,7 +21,7 @@ tabCarte[7].tabCase[6][8].pnj=true;
 
 tabCarte[8].tabCase[4][1].coffre=true;
 tabCarte[9].tabCase[3][2].coffre=true;
-tabCarte[10].tabCase[5][10].coffre=true;
+tabCarte[11].tabCase[5][10].coffre=true;
 
 //___________________________________________________
 
